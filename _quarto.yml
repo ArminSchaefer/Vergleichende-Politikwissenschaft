@@ -1,0 +1,32 @@
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+project:
+  type: book
+
+book:
+  title: "Einführung in die Vergleichende Politikwissenschaft"
+  reader-mode: true
+  page-footer:
+    left: |
+      Lehrbuch für die Universität Bremen und die JGU Mainz.
+    right: |
+      Geschrieben mit <a href="https://quarto.org/">Quarto</a>.
+  author: "Philip Manow und Armin Schäfer"
+  date: "24.11.2023"
+  
+  
+  chapters:
+    - index.qmd
+    - Einleitung.qmd
+    - Staat.qmd
+    - Demokratisierung.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+
