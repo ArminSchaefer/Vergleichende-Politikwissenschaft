@@ -1,8 +1,12 @@
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - vp.scss
   pdf:
     documentclass: scrreprt
+    code-link: true
+
 
 project:
   type: book
@@ -15,15 +19,18 @@ book:
       Lehrbuch für die Universität Bremen und die JGU Mainz.
     right: |
       Geschrieben mit <a href="https://quarto.org/">Quarto</a>.
+  cover-image: cover.png
+  favicon: cover.png
   author: "Philip Manow und Armin Schäfer"
-  date: "24.11.2023"
-  
+  date: today
+  date-format: DD.MM.YYYY
   
   chapters:
     - index.qmd
     - Einleitung.qmd
     - Staat.qmd
     - Demokratisierung.qmd
+    - Demokratie-oder-Diktatur.qmd
     - summary.qmd
     - references.qmd
 
