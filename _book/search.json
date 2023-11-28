@@ -2,9 +2,9 @@
   {
     "objectID": "Einleitung.html#ein-unterabschnitt",
     "href": "Einleitung.html#ein-unterabschnitt",
-    "title": "\n1  Einleitung\n",
+    "title": "1  Einleitung",
     "section": "\n1.1 Ein Unterabschnitt",
-    "text": "1.1 Ein Unterabschnitt\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  theme_light()+\n  theme_vp()\n#&gt; Warning: Removed 2 rows containing missing values (`geom_point()`).\n\n\n\nFigure 1.1: A first figure"
+    "text": "1.1 Ein Unterabschnitt\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  theme_light()+\n  theme_vp()\n  \n\n\n\nFigure 1.1: A first figure"
   },
   {
     "objectID": "summary.html",
@@ -30,8 +30,8 @@
   {
     "objectID": "Staat.html",
     "href": "Staat.html",
-    "title": "\n2  Staat, Staatsbildung und Konfikte\n",
+    "title": "2  Staat, Staatsbildung und Konfikte",
     "section": "",
-    "text": "See Figure 1.1 for details.\n\nggplot(data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  labs(x = NULL, y = NULL)+\n  theme_light()+\n  theme_vp()\n\n\n\nFigure 2.1: Another figure"
+    "text": "Siehe Abbildung 1.1 für mehr Details. Und Kapitel 1 für weitere Infos.\n\nggplot(data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  labs(x = NULL, y = NULL)+\n  theme_light()+\n  theme_vp()\n\n\n\nAbbildung 2.1: Another figure"
   }
 ]

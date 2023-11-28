@@ -1,4 +1,4 @@
-# Staat, Staatsbildung und Konfikte
+# Staat, Staatsbildung und Konfikte {#sec-staat}
 
 ```{r}
 #| echo: false
@@ -8,7 +8,7 @@ source("_common.R")
 
 ```
 
-See @fig-intro_1 for details.
+Siehe @fig-intro_1 für mehr Details. Und @sec-intro für weitere Infos.
 
 ```{r}
 #| label: fig-staat_1

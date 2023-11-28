@@ -7,6 +7,8 @@ format:
   pdf:
     documentclass: scrreprt
 
+lang: de
+
 project:
   type: book
   
@@ -23,7 +25,7 @@ book:
   author: "Philip Manow und Armin Schäfer"
   date: today
   date-format: DD.MM.YYYY
-  
+
   chapters:
     - index.qmd
     - Einleitung.qmd
