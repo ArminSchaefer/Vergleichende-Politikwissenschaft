@@ -1,8 +1,32 @@
 # Einleitung
 
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+```
+
 Dies ist das Einleitungskapitel...
 
 ## Ein Unterabschnitt
 
-Mit Text...
+```{r}
+#| label: fig-intro_1
+#| fig-cap: "A first figure"
+
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, 
+                y = body_mass_g, 
+                color = species)) +
+  geom_point()+
+  theme_light()+
+  theme_vp()
+  
+
+
+```
+
 
