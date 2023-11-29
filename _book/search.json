@@ -4,7 +4,7 @@
     "href": "Einleitung.html#ein-unterabschnitt",
     "title": "1  Einleitung",
     "section": "\n1.1 Ein Unterabschnitt",
-    "text": "1.1 Ein Unterabschnitt\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  theme_light()+\n  theme_vp()\n  \n\n\n\nFigure 1.1: A first figure"
+    "text": "1.1 Ein Unterabschnitt\n\nggplot(\n  data = penguins,\n  mapping = aes(x = flipper_length_mm, \n                y = body_mass_g, \n                color = species)) +\n  geom_point()+\n  theme_light()+\n  theme_vp()\n  \n\n\n\nAbbildung 1.1: A first figure\n\n\n\n\nText in einer Box.\n\n\n\n\n\n\n\nWichtig!\n\n\n\nDie ist wichtig\n\n\n\n\n\n\n\n\nVorsicht!\n\n\n\nHierauf müssen Sie achten.\n\n\n\n\n\n\n\n\nTipp\n\n\n\nVerwenden Sie zunächst Befehl xyz."
   },
   {
     "objectID": "summary.html",
