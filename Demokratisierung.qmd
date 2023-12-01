@@ -1,23 +1,18 @@
 # Demokratie als langer Prozess
 
-Wir wollen in diesem Abschnitt uns mit der longue durée der Demokratisierung beschäftigen. Das bedeutet eine ideengeschichtliche Rekonstruktion des Aufstiegs des demokratischen Gedankes (Theoretische Entwicklung). Danach geht es um den tatsächlichen Siegeszug dieser Herrschaftsform (Empirische Entwicklung). Um dieses zu leisten, müssen wir wuns fragen, wie man Demokratie misst. Hierzu diskutieren wir verschiedene Ansätze, und in diesem Zusammenhang Fragen der Reliabilität und Validität. 
+Wir wollen in diesem Kapitel uns mit der longue durée der Demokratisierung beschäftigen. Das bedeutet eine ideengeschichtliche Rekonstruktion des Aufstiegs des demokratischen Gedankes (Theoretische Entwicklung). Danach geht es um den tatsächlichen Siegeszug dieser Herrschaftsform (Empirische Entwicklung). Um dieses zu leisten, müssen wir wuns fragen, wie man Demokratie misst. Hierzu diskutieren wir verschiedene Ansätze, und in diesem Zusammenhang Fragen der Reliabilität und Validität. 
 
 
 ## Staaten und Demokratie
 
-* In VL2 haben wir uns mit dem Staat und dessen Existenz befasst
-* Dabei war es aber relativ egal, wie diese Staaten letztlich regiert werden
-* Der Staat hat einen Vorteil in der Ausübung von Gewalt *sowohl* in Demokratien *als auch* in Diktaturen
-* Wie hat sich die Demokratie *theoretisch* als auch *empirisch* entwickelt?
+In Kapitel ** haben wir uns mit dem Staat und dessen Existenz befasst.
+Dabei war es aber relativ egal, wie diese Staaten letztlich regiert werden. Der Staat hat einen Vorteil in der Ausübung von Gewalt *sowohl* in Demokratien *als auch* in Diktaturen. Wie hat sich die Demokratie *theoretisch* als auch *empirisch* entwickelt?
 
 ## Theoretische Entwicklung
 
-* Demokratie heutzutage quasi ausschließlich positiv konnotiert
-* Selbst die stärksten Autokratien "schmücken" sich mit der Bezeichnung als Demokratie
-  * Bspw.: Demokratische Volksrepublik Korea, DDR, ...
-* Diese *positive* Konnotation ist aber ein relativ junges Phänomen
-* Seit der Antike war Demokratie als Herrschaftsform verpönt
-  * Dies lag weniger an einer Ablehnung der heutigen Form von Demokratie
+Die Demokratie ist heutzutage quasi ausschließlich positiv konnotiert. Selbst die Autokratien wollen sich selbst gerne als Demokratien bezeichnen und als solche gesehen werden., bspw.die demokratische Volksrepublik Korea, früher die Deutsche Demokratische Republik (DDR) ... Diese *positive* Sicht auf die Demokratie ist aber ein vergleichsweise junges Phänomen.
+
+Denn seit der Antike war Demokratie als Herrschaftsform eigentlich verpönt. Sie galt als eine Verfallsform politischer Herrschaft. Dies lag weniger an einer Ablehnung der heutigen Form von Demokratie
   * Vielmehr wandelte sich auch das Verständnis davon was Demokratie ist, wie sie gestaltet wird und daher auch wie sie praktisch funktioniert
 
 ## Demokratie im antiken Griechenland
