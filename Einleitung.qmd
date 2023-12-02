@@ -21,11 +21,7 @@ ggplot(
   mapping = aes(x = flipper_length_mm, 
                 y = body_mass_g, 
                 color = species)) +
-  geom_point()+
-  theme_light()+
-  theme_vp()
-  
-
+  geom_point()
 
 ```
 

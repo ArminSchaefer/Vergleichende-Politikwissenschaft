@@ -1,0 +1,191 @@
+
+# Demokratiemessung {#sec-demokratiemessung}
+
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+library(here)
+
+```
+
+Eine der Grundfragen der Politikwissenschaft ist, wie es um den Zustand der Demokratie bestellt ist. Einerseits müssen wir beantworten können, wie viele Länder in der Welt demokratisch sind, und andererseits, wie es um die Demokratiequalität bestellt ist. Zu diesem Zweck liegt eine Fülle von Indizes vor, die entweder nur die erste oder aber beide Fragen zu beantworten versuchen. Einen besonders umfassenden Versuch der Bestandsaufnahme liefert das [Varieties of Democracy](https://www.v-dem.net/)-Projekt (V-Dem) der Universität Göteburg. In ihren jährlichen *Democracy Reports* beurteilen die Autor:innen, wie es um die Demokratie weltweit bestellt ist. Viel Aufmerksamkeit zog der Bericht im Jahr 2023 auf sich, als verkündet wurde, dass die Demokratie weltweit auf das Niveau des Jahres 1986 zurückgefallen sei ([V-Dem Democracy Report 2023: 9](https://www.v-dem.net/documents/29/V-dem_democracyreport2023_lowres.pdf)). Adam Przeworski, einer der bekanntesten Demokratieforscher, nannte die V-Dem-Ergebnisse daraufhin auf Twitter/X einen ["publicity stunt"](https://x.com/AdamPrzeworski/status/1631992792376393730), und Lucan Way sah sie sogar als ["lächerlich"](https://x.com/LucanWay/status/1634747037659824129) an. In diesem Kapitel gehen wir der Frage nach, weshalb Menschen, die sich ihr Leben lang wissenschaftlich mit der Demokratie auseinandersetzen, dennoch zu so radikal unterschiedlichen Einschätzungen kommen können. Wir werden vier Gründe besprechen:
+
+1) Das der Demokratie*messung* zugrundeliegende Demokratie*verständnis* unterscheidet sich,
+2) die Demokratie wird *dichotom* oder auf einer *kontinuierlichen Skala* gemessen,
+3) die Aussagen beziehen sich auf die *Bevölkerung* oder auf *Staaten* und
+4) die Demokratieindizes stützen sich auf *Expert:innenbefragungen* oder versuchen, nur *objektive* Daten zu verwenden.
+
+## Demokratieverständnisse -- von minimalistisch zu umfassend
+
+Jeder Versuch, Demokratie zu messen, muss zunächst definieren, was gemessen werden soll. Was Elemente gehören zwingend zur Demokratie dazu, welche eher nicht? Da Demokratie jedoch ein "essentially contested concept" ist, beginnt der Streit über die richtige Vorgehensweise bereits an dieser Stelle: Können wir schon dann von einer Demokratie sprechen, wenn Regierungen abgewählt werden können, oder sind auch Rechtstaatlichkeit und individuelle Freiheiten ein notwendiger Teil der Definition? In anderen Worten, reicht ein minimales, auf Wahlen bezogenes Demokratieverständnis aus oder muss die Demokratiedefinition um weitere Komponenten angereichert werden -- und falls ja, um welche?
+
+## Indizes mit engem Demokratieverständnis
+
+Fast alle heutigen Demokratieindizes stützen sich auf die Pionierarbeit von @Dahl.1971, in der er ein *prozedurales Demokratieverständnis* entwickelte und auf dieser Grundlage Dimensionen und Indikatoren festlegte, um erfassen zu können, welche Länder demokratisch sind. Dahls Verständnis ist minimalistisch, weil es sich im Kern darauf bezieht, wie stark der Wettbewerb um politische Macht ausgeprägt ist und wer sich an Wahlen beteiligen darf. Das heißt, ihm geht es um "Input-Legitimation", nicht aber darum, ob auf diese Weise gute Politikergebnisse (= Output) erzielt werden. Um zu erfassen ob ein Land demokratisch ist, schlägt er deshalb vor, die zwei Dimensionen "Wettbewerb" und "Partizipation/Inklusion" in den Blick zu nehmen. Nur wenn der Wettbewerbsgrad und die Partizipation hoch sind, kann von einer Demokratie gesprochen werden. 
+
+::: {.callout-note}
+@Dahl.1971 vermied das Wort "Demokratie", um Regierungssysteme zu beschreiben, und verwendete stattdesssen den Begriff **Polyarchie** (Herrschaft der Vielen), da er meinte, dass kein realer Staat sich vollständig dem Ideal der Demokratie annähern könne. Doch dieser Begriff hat sich nicht durchsetzen können und wird heute kaum noch verwendet.
+:::
+
+Die Bedeutung der beiden Dimensionen lässt sich anhand von konkreten Beispielen erläutern. In nicht-demokratischen Ländern (bei Dahl "closed hegemonies"), wie etwa China oder Saudi Arabien, gibt es weder einen Wettbewerb zwischen unterschiedlichen Parteien noch können sich die Menschen an Wahlen beteiligen. Dagegen finden in "inklusive hegemonies" zwar Wahlen statt und ein hoher Anteil der erwachsenen Bevölkerung verfügt über das Wahlrecht, doch echten Wettbewerb gibt es nicht -- es finden Wahlen ohne Auswahl statt. Dies galt etwa für die DDR oder gilt für das heutige Russland. Auch das Gegenmodell, Wettbewerb ohne Inklusion, reicht nicht aus, um ein Land als demokratisch bezeichnen zu können. So gab es vor dem Ersten Weltkrieg in einer Reihe von Ländern umkämpfte Wahlen, aber Frauen waren vom Wahlrecht ausgeschlossen. In der Schweiz galt dies sogar bis 1971. Auch in Südafrika unter dem Apartheid-Regime fand zwar Wettbewerb statt, doch die Bevölkerungsmehrheit durfte nicht wählen ("competitive oligarchies"). In der Demokratie darf, nach Dahls Verständnis, kein willkürlicher Ausschluss von erwachsenen Staatsbürger:innen stattfinden und es muss einen echten Wettbewerb zwischen konkurrierenden Parteien (oder Personen) geben.
+
+Um nun zu erfassen, wie viele Länder als demokratisch gelten können, müssen die allgemeinen Kriterien *operationalisiert* werden. Einen Versuch, Wettbewerb und Inklusion auf einfache Weise messbar zu machen, unternimmmt der finnische Politikwissenschaftler Tatu @Vanhanen.2000. Den **Wettbewerbsgrad** operationalisiert er, indem der Anteil der Partei mit dem höchsten Stimmenanteil bei einer Wahl von 100 abgezogen wird. Geringere Werte zeigen danach an, dass der Wettbewerbsgrad schwach ausgeprägt ist. Gleichzeitig legt Vanhanen fest, dass der Höchstwert 70 nicht überschreiten kann, selbst wenn die stärkste Partei weniger als 30 Prozent der Stimmen erzielt hat. **Partizipation** wird dadurch erfasst, welcher Anteil der Gesamtbevölkerung an einer Wahl teilgenommen hat. Wird vielen Menschen das Wahlrecht vorenthalten oder fällt die Wahlbeteiligung sehr niedrig aus, sinkt dieser Wert. Schließlich ergibt sich der **Demokratieindex** daraus, dass beide Maßzahlen miteinander multipliziert werden und das Ergebnis durch 100 geteilt wird. Ein Land gilt als demokratisch, wenn die errechnete Zahl mindesten den Wert 5 annimmt.^[Diese Grenzwerte bezeichnet @Vanhanen.2000[: 257] selbst als "willkürlich", aber dennoch beruht darauf seine Einteilung in demokratische oder nicht demokratische Länder.]
+
+Wie sich auf Grundlage dieses Messverfahrens die Anzahl der Demokratien im Zeitverlauf entwickelt hat, können wir mithilfe des R packages [`democracyData`](https://xmarquez.github.io/democracyData/index.html) ermitteln, in dem zahlreiche Demokratieindizes enthalten sind.
+
+```{r}
+#| label: fig-vanhanen
+#| fig-cap: "Anzahl der Demokratien weltweit nach Tatu Vanhanen."
+#| warning: false
+#| message: false
+
+library(democracyData)
+library(tidyverse)
+
+df_van <- vanhanen # lädt die Daten ins Arbeitsverzeichnis
+
+df_van <- vanhanen |> 
+  mutate(democratic = ifelse(
+    vanhanen$vanhanen_competition >=30 & 
+    vanhanen$vanhanen_participation >=10 &
+    vanhanen$vanhanen_democratization >=5, 1, 0)) |> 
+  group_by(year) |> 
+  summarise(abs_van = sum(democratic, na.rm=TRUE),
+            rel_van = abs_van/length(democratic)*100)
+
+ggplot(data = df_van, aes(x = year, y = abs_van))+
+    geom_line(color = "orange", linewidth = 0.8)+
+    labs(x = NULL, y = "Anzahl der Demokratien")+
+    scale_y_continuous(breaks = seq(0,150, by = 25))
+
+```
+
+Aus dem Verlauf der Kurve in Abbilung @fig-vanhanen lassen sich die "drei Wellen der Demokratisierung" [@Huntington.1993] ablesen: Die erste Welle fand bis Mitte/Ende der 1920er Jahre statt, eine zweite folgte nach dem Zweiten Weltkrieg und eine dritte ab Mitte der siebziger Jahre mit dem Übergang zur Demokratie in Portugal, Spanien und Griechenland. Sichtbar werden jedoch auch der Rückgang der Anzahl der Demokratien in den 1930er und den späten 1960er Jahren -- wie auch ganz am Ende des betrachteten Zeitraums (nach Huntington "*reverse waves*"). Trotz des Rückgangs im Jahr 2018 werden auf dieser Grundlage 137 Länder der Welt als demokratisch eingeordnet. Den Anspruch, die Qualität der Demokratie zu bewerten, erhebt der Vanhanen-Index nicht.
+
+Ebenfalls eng an Dahls zwei Dimensionen lehnt sich der Datensatz von @Boix.2013 an, der, wie auch Vanhanen, nur zwischen Demokratien und Nicht-Demokratien unterscheidet . Eine aktualisierte Variante des Datensatzes, die alle Jahre zwischen 1800 und 2020 enthält, lässt sich über den [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FENWWR) abrufen [@Miller.2022]. Drei Kriterien kennzeichnet aus ihrer Sicht das Vorhandensein einer Demokratie:
+
+"Contestation
+
+1. The executive is directly or indirectly elected in popular elections
+and is responsible either directly to voters or to a legislature.
+
+2. The legislature (or the executive if elected directly) is chosen in free
+and fair elections.
+
+Participation
+
+3. A majority of adult men has the right to vote" [@Boix.2013: 1530].
+
+Das dritte Kriterium ist besonders weit gefasst, denn Länder können auch dann als demokratisch gelten, wenn Frauen und eine substanzielle Minderheit der männlichen Bevölkerung vom Wahlrecht ausgeschlossen werden. Dies führt dazu, dass die USA seit 1800 als Demokratie eingestuft werden, obwohl Frauen und Schwarze nicht wählen durften. Der Grund für diese Vorgehensweise liegt vermutlich darin, nur so die Vereinigten Staaten von anderen Ländern im 19. Jahrhundert unterscheiden zu können, in denen gar keine Wahlen stattfanden. In den USA gab es bereits zu dieser Zeit einen intensiven Wettbewerb um politische Ämter, auch wenn die Partizipationsdimension alles andere als voll ausgeprägt war.
+
+```{r}
+#| label: fig-van_bmr
+#| fig-cap: "Anzahl der Demokratien weltweit nach Vanhanen sowie Boix-Miller-Rosato."
+#| warning: false
+#| message: false
+
+library(rio) # mit diesem Package lassen sich eine Vielzahl von Datenformaten öffnen
+
+bmr <- import(here("Daten", "bmr-democracy-v4.0-1.RData"))
+
+df_bmr <- bmr |> 
+  group_by(year) |> 
+  summarise(abs_bmr = sum(democracy, na.rm=TRUE),
+            rel_bmr = abs_bmr/length(democracy)*100)
+
+
+df_democracies2 <- merge(df_bmr, df_van, by="year", all.x = TRUE)
+
+df_democracies2 |> 
+  select(year, abs_bmr, abs_van) |> 
+  pivot_longer(-year, names_to = "Index", values_to = "Wert") |> 
+  mutate(Index = ifelse(Index == "abs_bmr", "BMR", "Vanhanen")) |> 
+  ggplot(aes(x = year, y = Wert, color = Index))+
+    geom_line(linewidth = 0.8, alpha = 0.7)+
+    labs(x = NULL, y = "Anzahl der Demokratien")+
+    scale_y_continuous(breaks = seq(0,150, by = 25))
+  
+```
+
+In Abbilung @fig-van_bmr fügen wir die mithilfe des BMR-Datensatzes ermittelte Anzahl der Demokratien weltweit der Grafik @fig-vanhanen hinzu. Zunächst fällt auf, dass die beiden Kurven bis Ende der 1980er Jahre nahezu deckungsgleich verlaufen. Nur in den letzten drei Jahrzehnten unterscheiden sich das Niveau deutlich. Noch 2018 gelten bei Boix-Miller-Rosato 117 Länder als demokratisch, bei Vanhanen aber immer noch 137 (ein Jahr zuvor waren es sogar noch 147 Länder).
+
+Ein letztes an Dahl orientiertes Demokratiemaß, das wir uns anschauen werden, bietet der [Democracy and Dictatorship](https://sites.google.com/site/joseantoniocheibub/datasets/dd)-Datensatz [@Cheibub.2010]. Erneut liegt ein minimalistisches Verständnis zugrunde und die Demokratie wird dichotom erfasst (wie der Name bereits sagt, werden "Demokratien" und "Diktaturen" unterschieden). Obwohl sie sich auf Dahl berufen, konzentrieren sich @Cheibub.2010 ausschließlich auf den "Wettbewerb" und ignorieren die Partizipation-Dimension. Drei Kriterien definieren demokratischen Wettbewerb:
+
+1. *Ex-ante-Ungewissheit*: Das Ergebnis der Wahl ist nicht bekannt, bevor sie stattfindet.
+
+2. *Ex-post-Unumkehrbarkeit*: Die Gewinner:in der Wahl tritt ihr Amt tatsächlich an, wird nicht daran gehindert oder aus dem Amt entfernt.
+
+3. *Wiederholbarkeit (oder Regelmäßigkeit)*: Wahlen, die die ersten beiden Kriterien erfüllen, finden in regelmäßigen und bekannten Abständen statt [leicht angepasst übernommen von @Cheibub.2010: 69].
+
+Operationalisiert werden diese drei Kriterien durch die folgenden Faktoren:
+
+* Die Legislative wird gewählt,
+* die Exekutive wird gewählt (ggf. durch eine gewählte Legislative),
+* mehr als eine Partei nimmt an diesen Wahlen teil und
+* es hat sich mindestens ein Machtwechsel unter identischen Regeln vollzogen [@Cheibub.2010: 69].
+
+Wird eines der Kriterien nicht erfüllt, wird das Land als Diktatur klassifiziert.
+
+::: {.callout-note}
+In der Definition von @Cheibub.2010 sind alle vier Faktoren *notwendige, aber nicht hinreichende* Bedingungen, um als Demokratie zu gelten. Nur gemeinsam sind sie *hinreichend*.
+:::
+
+```{r}
+#| label: fig-dd_four_countries
+#| fig-cap: "Einordnung von vier Ländern aufgrund der DD-Daten."
+#| warning: false
+#| message: false
+
+dd <- pacl_update # im democracyData enthalten
+
+df_dd <- dd |> 
+  group_by(year) |> 
+  summarise(abs_dd = sum(Democracy, na.rm=TRUE),
+            rel_dd = abs_dd/length(Democracy)*100)
+
+dd |> 
+    mutate(country = case_when(
+    extended_country_name == "Turkey (Ottoman Empire)" ~ "Türkei",
+    extended_country_name == "Tunisia" ~ "Tunesien",
+    extended_country_name == "South Africa" ~ "Südafrika",
+    extended_country_name == "India" ~ "Indien")) |> 
+  filter(country %in% c("Südafrika", "Türkei",
+                  "Tunesien", "Indien")) |> 
+  filter(year > 1999) |> 
+  ggplot(aes(x = year, y = Democracy))+
+  geom_line(color = "grey70")+
+  geom_point(color = "orange", size = 1.5)+
+  labs(x=NULL, y = "Klassifizierug nach DD-Datensatz")+
+  facet_wrap(~country)
+
+```
+
+Blicken wir auf die vier Länder in Abbildung @fig-dd_four_countries überrascht die Einordnung teilweise. So werden Indien und Tunesien als Demokratie eingestuft, Südafrika und die Türkei jedoch als Diktatur. Der Übergang von der Apartheid zur rechtlichen Gleichstellung der Schwarzen Bürger:innen in Südafrika schlägt sich in dieser Klassifikation nicht nieder. Dies liegt am vierten Kriterium: Erst wenn unter den selben Spielregeln ein Machtwechsel stattgefunden hat, gilt ein Land als demokratisch. Da seit dem Ende der Apartheid immer der *African National Congress* die Regierung gestellt hat, wird diese Kriterium nicht erfüllt. In der Türkei wurde 2017 die Verfassung geändert und seither hat kein Machtwechsel stattgefunden, deshalb wird das Land zur Diktatur herabgestuft. So lange eine Regierung immer wiedergewählt wird, argumentieren die Autor:innen, lässt sich *nicht feststellen*, ob sie die Niederlage akzeptieren und die Ämter abgegeben würde -- deshalb entscheiden sich @Cheibub.2010 für diese Kodierweise.
+
+Wie hat sich nun aus ihrer Sicht die Anzahl der Demokratien entwickelt? Wir fügen erneut den Datensatz den anderen beiden hinzu und vergleichen die Trends. In den ersten beiden Jahrzehnten nach dem Zweite Weltkrieg werden im DD-Datensatz mehr Länder als in den beiden anderen Datensätzen eingestuft, dann stimmen die Zahlen mit denen des Vanhanden-Indexes überein und am Ende des Zeitraums liegen sie zwischen den beiden anderen Indizes.
+
+```{r}
+#| label: fig-van_bmr_dd
+#| fig-cap: "Anzahl der Demokratien weltweit."
+#| warning: false
+#| message: false
+
+df_democracies3 <- merge(df_democracies2, df_dd, by="year", all.x = TRUE)
+
+df_democracies3 |> 
+  select(year, abs_bmr, abs_van, abs_dd) |> 
+  pivot_longer(-year, names_to = "Index", values_to = "Wert") |> 
+  mutate(Index = case_when(Index == "abs_bmr" ~ "BMR", 
+                          Index == "abs_van" ~ "Vanhanen",
+                          Index == "abs_dd" ~ "DD")) |> 
+  ggplot(aes(x = year, y = Wert, color = Index))+
+    geom_line(linewidth = 0.8, alpha = 0.7)+
+    labs(x = NULL, y = "Anzahl der Demokratien")+
+    scale_y_continuous(breaks = seq(0,150, by = 25))
+
+```
+
+## Indizes mit weiterem Demokratieverständnis

@@ -37,7 +37,7 @@ options(
 library(ggplot2)
 
 theme_set(
-  theme_minimal(
+  theme_light(
     base_size = getOption("book.base_size"),
     base_family = getOption("book.base_family")
   ) %+replace%
@@ -50,8 +50,12 @@ theme_set(
                                 face = "bold",
                                 size = 10),
       strip.text = element_text(color = "black",
-                                size = 12),
+                                size = 10),
+      strip.background = element_rect(color = "grey80",
+                                      fill = "grey80"),
       panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "gray90",
+                                      linewidth = rel(0.2)),
       legend.text = element_text(size = 8),
       legend.key.size = unit(.5, 'cm')
     )
