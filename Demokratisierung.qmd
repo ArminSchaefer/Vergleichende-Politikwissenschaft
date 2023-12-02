@@ -1,5 +1,13 @@
 # Demokratie als langer Prozess
 
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+```
+
 Wir wollen in diesem Kapitel uns mit der longue durée der Demokratisierung beschäftigen. Das bedeutet eine ideengeschichtliche Rekonstruktion des Aufstiegs des demokratischen Gedankes (Theoretische Entwicklung). Danach geht es um den tatsächlichen Siegeszug dieser Herrschaftsform (Empirische Entwicklung). Um dieses zu leisten, müssen wir wuns fragen, wie man Demokratie misst. Hierzu diskutieren wir verschiedene Ansätze, und in diesem Zusammenhang Fragen der Reliabilität und Validität. 
 
 
@@ -39,8 +47,12 @@ Denn seit der Antike war Demokratie als Herrschaftsform eigentlich verpönt. Sie
 
 ## Demokratie im antiken Griechenland
 
-```{r Demokratie, echo=FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
+```{r}
+#| label: Demokratie
+#| echo: false
+#| warning: false
+#| message: false
+
 demokratie_tidy <- tribble(
   ~`Zahl der Herrschenden`, ~`Gute Form`, ~Verfallsform, 
   "einer", "Monarchie", "Tyrannis",
@@ -50,6 +62,7 @@ demokratie_tidy <- tribble(
   
 demokratie_tidy %>%
   knitr::kable()
+
 ```
 
 ## Demokratie im antiken Griechenland
@@ -111,14 +124,9 @@ demokratie_tidy %>%
 
 ## Entwicklung der Demokratie
 
-```{r Przeworski, collapse=TRUE, warning=FALSE, message=FALSE, eval = F, size = "tiny"}
-library(tidyverse)
-library(democracyData) # nachdem das Paket installiert wurde
-# remotes::install_github("xmarquez/democracyData")
-# das Paket lässt sich nur über Github installieren, als Voraussetzung braucht man 
-
-# dann einfach PIPE aufrufen
-# PIPE
+```{r}
+#| label: Przeworksi
+#| eval: false
 
 democracy1 <- PIPE %>% 
   group_by(year) %>% 
@@ -133,18 +141,15 @@ ggplot(democracy1) +
   geom_line(aes(x = year, y = vote_ext, color = "male suffrage")) +
   geom_line(aes(x = year, y = vote_extf,  color = "female suffrage"), size = 1) +
   coord_cartesian(xlim = c(1830, 2002)) +
-  theme_bw() +
   theme(legend.position = "bottom")
+
 ```
 
 ## Entwicklung der Demokratie
 
-```{r Przeworskia, warning=FALSE, message=FALSE, echo = F, size = "tiny"}
-
-library(tidyverse)
-library(democracyData)
-
-# PIPE
+```{r}
+#| label: Przeworski-I
+#| echo: false
 
 democracy1 <- PIPE %>% 
   group_by(year) %>% 
@@ -159,8 +164,8 @@ ggplot(democracy1) +
   geom_line(aes(x = year, y = vote_ext, color = "male suffrage")) +
   geom_line(aes(x = year, y = vote_extf,  color = "female suffrage"), size = 1) +
   coord_cartesian(xlim = c(1830, 2002)) +
-  theme_bw() +
   theme(legend.position = "bottom")
+
 ```
 
 ## Entwicklung der Demokratie
@@ -184,6 +189,7 @@ democracy2 <- PIPE %>%
 ggplot(democracy2) +
   geom_line(aes(x = year, y = share_secret)) +
   coord_cartesian(xlim = c(1830, 2002))
+
 ```
 
 ## Entwicklung der Demokratie
