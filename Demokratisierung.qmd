@@ -1,4 +1,4 @@
-# Demokratie als langer Prozess
+# Demokratie als langer Prozess {#sec-demokratisierung}
 
 ```{r}
 #| echo: false
@@ -7,6 +7,20 @@
 source("_common.R")
 
 ```
+
+In diesem Kapitel geht es um Demokratie. Demokratie ist uns wichtig, weil sie uns verspricht, dass wir uns an der Gestaltung unseres Gemeinwesens - sei es unserer Stadt oder Dorf, unserem Land, vielleicht Europa? - beteiligen können, dass wir also selbstbestimmer leben können als etwa in einer Diktatur. Es ist das alte Versprechen Jean-Jacque Rousseaus - nur unter den Gesetzen zu leben, die man sich selbst gegeben hat. Demokratie ist damit eine Form kollektiver Selbstregierung. Zugleich scheint diese Form politischer Herrschaft in Gefahr. Zumindest ist überall von einer 'Krise der Demokratie' zu lesen, von den Feinden der Demokratie und ihrem Aufstieg. 
+
+Um das besser zu verstehen und einordnen zu können, wollen wir in diesem und den nächsten beiden Kapiteln vestehen, was Demokratie ist, welche Länder seit wann demokratisch sind. Damit verbunden müssen wir uns mit grundlegenden Konzepten der Demokratie auseinandersetzen. Was ist eine Demokratie? Wenn es freie und faire Wahlen gibt? Wenn diese Wahlen auch wirklich dazuführen, dass Macht wechselt?  und wie man sie 'misst'. Wir beschäftigen uns auch mit der Frage, warum Länder demokratisch sind und es auch bleiben, während andere Länder nicht-demokratisch sind ('autokratisch', 'totalitär', diktatorisch) oder ihre Demokratie gefährdet erscheint.
+
+1) Was ist das Problem und warum ist das wichtig? (Realweltlicher Einstieg, um die Studis abzuholen)
+2) Was sind grundlegende Konzepte?
+3) Welche Modelle sind hilfreich und was wissen wir bereits über Unterschiede zwischen Ländern?
+4) Mit welchen Daten können wir arbeiten?
+5) Wie werden die Daten ausgewertet?
+6) Was zeigen die Daten?
+7) Wie weiter?
+
+
 
 Wir wollen in diesem Kapitel uns mit der longue durée der Demokratisierung beschäftigen. Das bedeutet eine ideengeschichtliche Rekonstruktion des Aufstiegs des demokratischen Gedankes (Theoretische Entwicklung). Danach geht es um den tatsächlichen Siegeszug dieser Herrschaftsform (Empirische Entwicklung). Um dieses zu leisten, müssen wir wuns fragen, wie man Demokratie misst. Hierzu diskutieren wir verschiedene Ansätze, und in diesem Zusammenhang Fragen der Reliabilität und Validität. 
 
@@ -244,11 +258,6 @@ ggplot(democracy3) +
   coord_cartesian(xlim = c(1850, 2002))
 ```
 
-# Pause (Particify)
-
-## Pause (Particify)
-
-![](particify_demokratie.png){width=10cm}
 
 # Messung von Demokratie
 
