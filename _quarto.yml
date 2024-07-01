@@ -41,6 +41,8 @@ book:
 
 bibliography: references.bib
 csl: "politische-vierteljahresschrift.csl"
+standalone: true
+embed-resources: true
 
 execute:
   freeze: auto
