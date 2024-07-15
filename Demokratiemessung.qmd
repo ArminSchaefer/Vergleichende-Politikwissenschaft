@@ -1,17 +1,25 @@
-
 # Demokratiemessung {#sec-demokratiemessung}
 
 ```{r}
+#| label: setup
 #| echo: false
 #| message: false
 #| warning: false
+#| no_prompt: true
 
 source("_common.R")
 
-library(here)
-library(gt)
-library(patchwork)
-library(tidyverse)
+if (!require("pacman")) {
+    install.packages("pacman")
+    library(pacman)
+}
+
+p_load(here, devtools, remotes, gt, vdemdata, patchwork, tidyverse)
+
+# Diese Packages sind nicht in Cran enthalten und müssen deshalb getrennt installiert werden.
+
+remotes::install_github("xmarquez/democracyData")
+devtools::install_github("vdeminstitute/vdemdata")
 
 ```
 
