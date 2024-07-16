@@ -14,7 +14,7 @@ if (!require("pacman")) {
     library(pacman)
 }
 
-p_load(here, devtools, remotes, gt, vdemdata, patchwork, tidyverse)
+p_load(here, devtools, remotes, gt, patchwork, tidyverse)
 
 # Diese Packages sind nicht in Cran enthalten und müssen deshalb getrennt installiert werden.
 
@@ -94,16 +94,14 @@ Wie sich auf Grundlage dieses Messverfahrens die Anzahl der Demokratien im Zeitv
 #| warning: false
 #| message: false
 
-library(democracyData)
-
 df_van <- vanhanen # lädt die Daten ins Arbeitsverzeichnis ("Environment").
 
-df_van <- vanhanen |> 
+df_van <- vanhanen %>% 
   mutate(democratic = ifelse(
     vanhanen$vanhanen_competition >=30 & 
     vanhanen$vanhanen_participation >=10 &
-    vanhanen$vanhanen_democratization >=5, 1, 0)) |> 
-  group_by(year) |> 
+    vanhanen$vanhanen_democratization >=5, 1, 0)) %>%  
+  group_by(year) %>% 
   summarise(abs_van = sum(democratic, na.rm=TRUE),
             rel_van = abs_van/length(democratic)*100)
 
@@ -142,18 +140,18 @@ library(rio) # mit diesem Package lassen sich eine Vielzahl von Datenformaten ö
 
 bmr <- import(here("Daten", "bmr-democracy-v4.0-1.RData"))
 
-df_bmr <- bmr |> 
-  group_by(year) |> 
+df_bmr <- bmr %>% 
+  group_by(year) %>% 
   summarise(abs_bmr = sum(democracy, na.rm=TRUE),
             rel_bmr = abs_bmr/length(democracy)*100)
 
 
 df_democracies2 <- merge(df_bmr, df_van, by="year", all.x = TRUE)
 
-df_democracies2 |> 
-  select(year, abs_bmr, abs_van) |> 
-  pivot_longer(-year, names_to = "Index", values_to = "Wert") |> 
-  mutate(Index = ifelse(Index == "abs_bmr", "BMR", "Vanhanen")) |> 
+df_democracies2 %>% 
+  select(year, abs_bmr, abs_van) %>% 
+  pivot_longer(-year, names_to = "Index", values_to = "Wert") %>% 
+  mutate(Index = ifelse(Index == "abs_bmr", "BMR", "Vanhanen")) %>% 
   ggplot(aes(x = year, y = Wert, color = Index))+
     geom_line(linewidth = 0.8, alpha = 0.7)+
     labs(x = NULL, y = "Anzahl der Demokratien")+
@@ -193,20 +191,20 @@ In der Definition von @Cheibub.2010 sind alle vier Faktoren *notwendige, aber ni
 
 dd <- pacl_update # im democracyData enthalten
 
-df_dd <- dd |> 
-  group_by(year) |> 
+df_dd <- dd %>% 
+  group_by(year) %>% 
   summarise(abs_dd = sum(Democracy, na.rm=TRUE),
             rel_dd = abs_dd/length(Democracy)*100)
 
-dd |> 
+dd %>% 
     mutate(country = case_when(
     extended_country_name == "Turkey (Ottoman Empire)" ~ "Türkei",
     extended_country_name == "Tunisia" ~ "Tunesien",
     extended_country_name == "South Africa" ~ "Südafrika",
-    extended_country_name == "India" ~ "Indien")) |> 
+    extended_country_name == "India" ~ "Indien")) %>% 
   filter(country %in% c("Südafrika", "Türkei",
-                  "Tunesien", "Indien")) |> 
-  filter(year > 1999) |> 
+                  "Tunesien", "Indien")) %>% 
+  filter(year > 1999) %>% 
   ggplot(aes(x = year, y = Democracy))+
   geom_line(color = "grey70")+
   geom_point(color = "orange", size = 1.5)+
@@ -227,12 +225,12 @@ Wie hat sich nun aus ihrer Sicht die Anzahl der Demokratien entwickelt? Wir füg
 
 df_democracies3 <- merge(df_democracies2, df_dd, by="year", all.x = TRUE)
 
-df_democracies3 |> 
-  select(year, abs_bmr, abs_van, abs_dd) |> 
-  pivot_longer(-year, names_to = "Index", values_to = "Wert") |> 
+df_democracies3 %>% 
+  select(year, abs_bmr, abs_van, abs_dd) %>% 
+  pivot_longer(-year, names_to = "Index", values_to = "Wert") %>% 
   mutate(Index = case_when(Index == "abs_bmr" ~ "BMR", 
                           Index == "abs_van" ~ "Vanhanen",
-                          Index == "abs_dd" ~ "DD")) |> 
+                          Index == "abs_dd" ~ "DD")) %>% 
   ggplot(aes(x = year, y = Wert, color = Index))+
     geom_line(linewidth = 0.8, alpha = 0.7)+
     labs(x = NULL, y = "Anzahl der Demokratien")+
@@ -266,9 +264,9 @@ Das besondere an Polity ist, dass nicht nur der Demokratiegrad auf einer Skala v
 
 polity <- download_polity_annual(verbose = FALSE)
 
-polity |> 
-  filter(year == 2018) |> 
-  filter(autoc >=0 & democ >=0) |> 
+polity %>% 
+  filter(year == 2018) %>% 
+  filter(autoc >=0 & democ >=0) %>% 
   ggplot(aes(x = democ, y = autoc))+
   geom_smooth(fill = "grey80")+
   geom_jitter(alpha = 0.4)+
@@ -286,21 +284,21 @@ Aus @fig-autoc_democ geht hervor, dass in den meisten Ländern hohe Werte auf de
 #| warning: false
 #| message: false
 
-p1 <- polity |> 
-  filter(year > 1799 & year < 2019) |> 
-  group_by(year) |> 
-  summarise(mean_polity2 = mean(polity2, na.rm=TRUE)) |> 
+p1 <- polity %>% 
+  filter(year > 1799 & year < 2019) %>% 
+  group_by(year) %>% 
+  summarise(mean_polity2 = mean(polity2, na.rm=TRUE)) %>% 
   ggplot(aes(x = year, y = mean_polity2))+
   geom_line(color = "orange", linewidth = 0.8)+
   scale_y_continuous(limits = c(-10,10))+
   labs(x = NULL,
       y = "Durchschnittlicher Polity2-Wert")
 
-p2 <- polity |> 
-  filter(year > 1799 & year < 2019) |> 
-  mutate(democratic = ifelse(polity2>5,1,0)) |> 
-  group_by(year) |> 
-  summarise(Anzahl = sum(democratic, na.rm=TRUE)) |> 
+p2 <- polity %>% 
+  filter(year > 1799 & year < 2019) %>% 
+  mutate(democratic = ifelse(polity2>5,1,0)) %>% 
+  group_by(year) %>% 
+  summarise(Anzahl = sum(democratic, na.rm=TRUE)) %>% 
   ggplot(aes(x = year, y = Anzahl))+
   geom_line(color = "orange", linewidth = 0.8)+
   labs(x = NULL,
@@ -323,13 +321,13 @@ Im Gegensatz zu den bisherigen Indizes misst der *Freedom House*-Index Demokrati
 
 fh <- download_fh() # Aggregierter Datensatz 1972 bis 2021
 
-fh |> 
+fh %>% 
   mutate(frei = case_when(
       status == "F" ~ "frei",
       status == "PF" ~ "teilweise frei",
-      status == "NF" ~ "unfrei")) |> 
-  group_by(frei, year) |> 
-  tally() |> 
+      status == "NF" ~ "unfrei")) %>% 
+  group_by(frei, year) %>% 
+  tally() %>% 
   ggplot(aes(x = year, y = n, color = frei))+
   geom_line(linewidth = 0.8)+
   labs(x = NULL, y = "Anzahl", color = NULL)
@@ -347,28 +345,28 @@ Den aktuell umfassendsten Versuch, Demokratie zu messen, stellt das *Varieties o
 #| message: false
 #| warning: false
 
-dd_short <- dd |> 
-  filter(year > 1990) |> 
+dd_short <- dd %>% 
+  filter(year > 1990) %>% 
   select(year, extended_country_name, Democracy)
 
-vdem_short <- vdem_simple |> 
-  filter(year > 1990) |> 
+vdem_short <- vdem_simple %>% 
+  filter(year > 1990) %>% 
   select(year, extended_country_name, v2x_polyarchy)
 
 comparison <- left_join(vdem_short, dd_short, by=c("year", "extended_country_name"))
 
-comparison |> 
+comparison %>% 
   filter(extended_country_name %in% c("Turkey (Ottoman Empire)", 
                                       "Tunisia",
                                       "India",
-                                      "South Africa")) |> 
+                                      "South Africa")) %>% 
   mutate(country = case_when(
     extended_country_name == "Turkey (Ottoman Empire)" ~ "Türkei",
     extended_country_name == "Tunisia" ~ "Tunesien",
     extended_country_name == "South Africa" ~ "Südafrika",
-    extended_country_name == "India" ~ "Indien")) |> 
+    extended_country_name == "India" ~ "Indien")) %>% 
   filter(country %in% c("Südafrika", "Türkei",
-                  "Tunesien", "Indien")) |> 
+                  "Tunesien", "Indien")) %>% 
   ggplot()+
   geom_line(aes(x = year, y = v2x_polyarchy,
                 color = "V-Dem"),
@@ -399,11 +397,11 @@ vdem <- vdem_simple # Daten aus democracyData herunterladen
 
 # absolute Anzahl der Demorkatietypen
 
-p1 <- vdem_simple |>
-  filter(year > 1900) |> 
+p1 <- vdem_simple %>%
+  filter(year > 1900) %>% 
   select(year, v2x_polyarchy, v2x_libdem, v2x_egaldem, 
-         v2x_partipdem, v2x_delibdem) |> 
-  pivot_longer(-year, values_to = "Werte", names_to = "Index") |> 
+         v2x_partipdem, v2x_delibdem) %>% 
+  pivot_longer(-year, values_to = "Werte", names_to = "Index") %>% 
   # umbenennen der Indiktaren
   mutate(Index = case_when(
     Index == "v2x_polyarchy" ~ "elektoral",
@@ -411,12 +409,12 @@ p1 <- vdem_simple |>
     Index == "v2x_egaldem" ~ "egalitär",
     Index == "v2x_partipdem" ~ "partizipativ",
     Index == "v2x_delibdem" ~ "deliberativ"
-  )) |> 
+  )) %>% 
   # Dichotomisierung
-  mutate(democratic = ifelse(Werte >=0.5,1,0)) |> 
-  group_by(Index, year) |> 
+  mutate(democratic = ifelse(Werte >=0.5,1,0)) %>% 
+  group_by(Index, year) %>% 
   # Addieren der Einsen
-  tally(democratic) |> 
+  tally(democratic) %>% 
   ggplot(aes(x = year, y = n, color = Index))+
   geom_line(linewidth = .8)+
   labs(x = NULL, y = NULL,
@@ -424,11 +422,11 @@ p1 <- vdem_simple |>
   theme(axis.text = element_text(size = 8))
 
 
-p2 <- vdem_simple |>
-  filter(year > 1900) |> 
+p2 <- vdem_simple %>%
+  filter(year > 1900) %>% 
   select(year, v2x_polyarchy, v2x_libdem, v2x_egaldem, 
-         v2x_partipdem, v2x_delibdem) |> 
-  pivot_longer(-year, values_to = "Werte", names_to = "Index") |> 
+         v2x_partipdem, v2x_delibdem) %>% 
+  pivot_longer(-year, values_to = "Werte", names_to = "Index") %>% 
   # umbenennen der Indiktaren
   mutate(Index = case_when(
     Index == "v2x_polyarchy" ~ "elektoral",
@@ -436,11 +434,11 @@ p2 <- vdem_simple |>
     Index == "v2x_egaldem" ~ "egalitär",
     Index == "v2x_partipdem" ~ "partizipativ",
     Index == "v2x_delibdem" ~ "deliberativ"
-  )) |> 
+  )) %>% 
   # Dichotomisierung
-  mutate(democratic = ifelse(Werte >=0.5,1,0)) |> 
-  group_by(Index, year) |> 
-  summarise(Durchschnitt = mean(Werte, na.rm=TRUE)) |> 
+  mutate(democratic = ifelse(Werte >=0.5,1,0)) %>% 
+  group_by(Index, year) %>% 
+  summarise(Durchschnitt = mean(Werte, na.rm=TRUE)) %>% 
   ggplot(aes(x = year, y = Durchschnitt, color = Index))+
   geom_line(linewidth = .8)+
   labs(x = NULL, y = NULL,
@@ -477,20 +475,20 @@ library(vdemdata)
 
 vdemtotal <- vdemdata::vdem
 
-vdem_selected <- vdemtotal |> 
+vdem_selected <- vdemtotal %>% 
   dplyr::select(country_name, country_id, year, v2x_libdem, e_wb_pop)
 
-vdem_selected |> 
-  filter(year > 1899) |> 
-  group_by(year) |> 
-  mutate(poptotal = sum(e_wb_pop, na.rm=TRUE)) |> 
-  ungroup() |> 
-  mutate(poprel = e_wb_pop/poptotal*100) |> 
-  na.omit() |> 
-  group_by(year) |> 
+vdem_selected %>% 
+  filter(year > 1899) %>% 
+  group_by(year) %>% 
+  mutate(poptotal = sum(e_wb_pop, na.rm=TRUE)) %>% 
+  ungroup() %>% 
+  mutate(poprel = e_wb_pop/poptotal*100) %>% 
+  na.omit() %>% 
+  group_by(year) %>% 
   summarise(ungewichtet = mean(v2x_libdem),
-            gewichtet = weighted.mean(v2x_libdem,poprel)) |> 
-  pivot_longer(-year, values_to = "Werte", names_to = "Indikator") |> 
+            gewichtet = weighted.mean(v2x_libdem,poprel)) %>% 
+  pivot_longer(-year, values_to = "Werte", names_to = "Indikator") %>% 
   ggplot(aes(x = year, y = Werte, color = fct_relevel(Indikator, "ungewichtet", "gewichtet"),
   group = Indikator))+
   geom_line(linewidth=.8)+
@@ -517,17 +515,17 @@ Um der Gefahr solcher Verzerrungen zu entgehen -- die auch in ein positive Richt
 # Datensatz einlesen
 df_lm <- import(here("Daten", "Little-Meng", "df_little_meng.RDS"))
 
-df_lm <-  df_lm |> 
-  filter(year > 1980 & year < 2021) |> 
+df_lm <-  df_lm %>% 
+  filter(year > 1980 & year < 2021) %>% 
   mutate(regime = ifelse(democracy==0, "Autokratie", "Demokratie"))
 
-p1 <- df_lm |> 
-  group_by(year) |> 
-  mutate(mean_partylose_all = mean(partylose, na.rm=TRUE)) |> 
-  ungroup() |> 
-  filter(!is.na(regime)) |> 
-  group_by(year, regime) |> 
-  mutate(mean_partylose = mean(partylose, na.rm=TRUE)) |> 
+p1 <- df_lm %>% 
+  group_by(year) %>% 
+  mutate(mean_partylose_all = mean(partylose, na.rm=TRUE)) %>% 
+  ungroup() %>% 
+  filter(!is.na(regime)) %>% 
+  group_by(year, regime) %>% 
+  mutate(mean_partylose = mean(partylose, na.rm=TRUE)) %>% 
   ggplot()+
   geom_line(aes(x = year, y = mean_partylose_all, color = "Durchschnitt"))+
   geom_line(aes(x = year, y = mean_partylose, color = regime))+
@@ -536,13 +534,13 @@ p1 <- df_lm |>
   scale_y_continuous(limits = c(0,1), labels = scales::percent)
 
 
-p2 <- df_lm |> 
-  group_by(year) |> 
-  mutate(mean_lm_index_all = mean(oindex, na.rm=TRUE)) |> 
-  ungroup() |> 
-  filter(!is.na(regime)) |> 
-  group_by(year, regime) |> 
-  mutate(mean_lm_index = mean(oindex, na.rm=TRUE)) |> 
+p2 <- df_lm %>% 
+  group_by(year) %>% 
+  mutate(mean_lm_index_all = mean(oindex, na.rm=TRUE)) %>% 
+  ungroup() %>% 
+  filter(!is.na(regime)) %>% 
+  group_by(year, regime) %>% 
+  mutate(mean_lm_index = mean(oindex, na.rm=TRUE)) %>% 
   ggplot()+
   geom_line(aes(x = year, y = mean_lm_index_all, color = "Durchschnitt"))+
   geom_line(aes(x = year, y = mean_lm_index, color = regime))+
@@ -570,15 +568,15 @@ library(ggcorrplot)
 
 # alle Länder
 
-df_corr <- df_lm |> 
-  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) |> 
+df_corr <- df_lm %>% 
+  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) %>% 
   rename(
     FH = fh_total_reversed,
     Polity = polity2,
     EDI = v2x_polyarchy,
     LDI = v2x_libdem,
     LM = oindex
-  ) |> 
+  ) %>% 
   drop_na()
 
 corr <- round(cor(df_corr), 2)
@@ -591,16 +589,16 @@ p1 <- ggcorrplot(corr, colors = c("skyblue", "white", "orange"),
 
 # nur Demokratien
 
-df_corr_demo <- df_lm |> 
-  filter(regime == "Demokratie") |> 
-  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) |> 
+df_corr_demo <- df_lm %>% 
+  filter(regime == "Demokratie") %>% 
+  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) %>% 
   rename(
     FH = fh_total_reversed,
     Polity = polity2,
     EDI = v2x_polyarchy,
     LDI = v2x_libdem,
     LM = oindex
-  ) |> 
+  ) %>% 
   drop_na()
 
 corr_demo <- round(cor(df_corr_demo), 2)
@@ -613,16 +611,16 @@ p2 <- ggcorrplot(corr_demo, colors = c("skyblue", "white", "orange"),
 
 # alle Länder bis 2010
 
-df_corr <- df_lm |> 
-  filter(year < 2011) |> 
-  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) |> 
+df_corr <- df_lm %>% 
+  filter(year < 2011) %>% 
+  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) %>% 
   rename(
     FH = fh_total_reversed,
     Polity = polity2,
     EDI = v2x_polyarchy,
     LDI = v2x_libdem,
     LM = oindex
-  ) |> 
+  ) %>% 
   drop_na()
 
 corr <- round(cor(df_corr), 2)
@@ -635,17 +633,17 @@ p3 <- ggcorrplot(corr, colors = c("skyblue", "white", "orange"),
 
 # nur Demokratien bis 2010
 
-df_corr_demo <- df_lm |> 
-  filter(regime == "Demokratie") |> 
-  filter(year < 2011) |> 
-  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) |> 
+df_corr_demo <- df_lm %>% 
+  filter(regime == "Demokratie") %>% 
+  filter(year < 2011) %>% 
+  select(fh_total_reversed, polity2, v2x_polyarchy, v2x_libdem, oindex) %>% 
   rename(
     FH = fh_total_reversed,
     Polity = polity2,
     EDI = v2x_polyarchy,
     LDI = v2x_libdem,
     LM = oindex
-  ) |> 
+  ) %>% 
   drop_na()
 
 corr_demo <- round(cor(df_corr_demo), 2)
