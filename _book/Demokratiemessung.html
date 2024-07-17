@@ -4891,12 +4891,12 @@ Hinweis
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_van</span> <span class="op">&lt;-</span> <span class="va">vanhanen</span> <span class="co"># lädt die Daten ins Arbeitsverzeichnis ("Environment").</span></span>
 <span></span>
-<span><span class="va">df_van</span> <span class="op">&lt;-</span> <span class="va">vanhanen</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_van</span> <span class="op">&lt;-</span> <span class="va">vanhanen</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span></span>
 <span>    <span class="va">vanhanen</span><span class="op">$</span><span class="va">vanhanen_competition</span> <span class="op">&gt;=</span><span class="fl">30</span> <span class="op">&amp;</span> </span>
 <span>    <span class="va">vanhanen</span><span class="op">$</span><span class="va">vanhanen_participation</span> <span class="op">&gt;=</span><span class="fl">10</span> <span class="op">&amp;</span></span>
-<span>    <span class="va">vanhanen</span><span class="op">$</span><span class="va">vanhanen_democratization</span> <span class="op">&gt;=</span><span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="va">vanhanen</span><span class="op">$</span><span class="va">vanhanen_democratization</span> <span class="op">&gt;=</span><span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>  </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span>abs_van <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">democratic</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>            rel_van <span class="op">=</span> <span class="va">abs_van</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">democratic</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span></span>
 <span></span>
@@ -4932,18 +4932,18 @@ Abbildung&nbsp;3.1: Anzahl der Demokratien weltweit nach Tatu Vanhanen.
 <span></span>
 <span><span class="va">bmr</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://gesistsa.github.io/rio/reference/import.html">import</a></span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"Daten"</span>, <span class="st">"bmr-democracy-v4.0-1.RData"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_bmr</span> <span class="op">&lt;-</span> <span class="va">bmr</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_bmr</span> <span class="op">&lt;-</span> <span class="va">bmr</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span>abs_bmr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">democracy</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>            rel_bmr <span class="op">=</span> <span class="va">abs_bmr</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="va">df_democracies2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">df_bmr</span>, <span class="va">df_van</span>, by<span class="op">=</span><span class="st">"year"</span>, all.x <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_democracies2</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">abs_bmr</span>, <span class="va">abs_van</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"Index"</span>, values_to <span class="op">=</span> <span class="st">"Wert"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>Index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_bmr"</span>, <span class="st">"BMR"</span>, <span class="st">"Vanhanen"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_democracies2</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">abs_bmr</span>, <span class="va">abs_van</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"Index"</span>, values_to <span class="op">=</span> <span class="st">"Wert"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>Index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_bmr"</span>, <span class="st">"BMR"</span>, <span class="st">"Vanhanen"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Wert</span>, color <span class="op">=</span> <span class="va">Index</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>    <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">0.8</span>, alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">+</span></span>
 <span>    <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="st">"Anzahl der Demokratien"</span><span class="op">)</span><span class="op">+</span></span>
@@ -4991,20 +4991,20 @@ Hinweis
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dd</span> <span class="op">&lt;-</span> <span class="va">pacl_update</span> <span class="co"># im democracyData enthalten</span></span>
 <span></span>
-<span><span class="va">df_dd</span> <span class="op">&lt;-</span> <span class="va">dd</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_dd</span> <span class="op">&lt;-</span> <span class="va">dd</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span>abs_dd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Democracy</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>            rel_dd <span class="op">=</span> <span class="va">abs_dd</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Democracy</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">dd</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">dd</span> <span class="op">%&gt;%</span> </span>
 <span>    <span class="fu">mutate</span><span class="op">(</span>country <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"Turkey (Ottoman Empire)"</span> <span class="op">~</span> <span class="st">"Türkei"</span>,</span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"Tunisia"</span> <span class="op">~</span> <span class="st">"Tunesien"</span>,</span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"South Africa"</span> <span class="op">~</span> <span class="st">"Südafrika"</span>,</span>
-<span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"India"</span> <span class="op">~</span> <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"India"</span> <span class="op">~</span> <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Südafrika"</span>, <span class="st">"Türkei"</span>,</span>
-<span>                  <span class="st">"Tunesien"</span>, <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1999</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>                  <span class="st">"Tunesien"</span>, <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1999</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Democracy</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"grey70"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"orange"</span>, size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span></span>
@@ -5026,12 +5026,12 @@ Abbildung&nbsp;3.3: Einordnung von vier Ländern aufgrund der DD-Daten.
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_democracies3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">df_democracies2</span>, <span class="va">df_dd</span>, by<span class="op">=</span><span class="st">"year"</span>, all.x <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_democracies3</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">abs_bmr</span>, <span class="va">abs_van</span>, <span class="va">abs_dd</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"Index"</span>, values_to <span class="op">=</span> <span class="st">"Wert"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_democracies3</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">abs_bmr</span>, <span class="va">abs_van</span>, <span class="va">abs_dd</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"Index"</span>, values_to <span class="op">=</span> <span class="st">"Wert"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>Index <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_bmr"</span> <span class="op">~</span> <span class="st">"BMR"</span>, </span>
 <span>                          <span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_van"</span> <span class="op">~</span> <span class="st">"Vanhanen"</span>,</span>
-<span>                          <span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_dd"</span> <span class="op">~</span> <span class="st">"DD"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>                          <span class="va">Index</span> <span class="op">==</span> <span class="st">"abs_dd"</span> <span class="op">~</span> <span class="st">"DD"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Wert</span>, color <span class="op">=</span> <span class="va">Index</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>    <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">0.8</span>, alpha <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">+</span></span>
 <span>    <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="st">"Anzahl der Demokratien"</span><span class="op">)</span><span class="op">+</span></span>
@@ -5075,9 +5075,9 @@ Zum Merken
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">polity</span> <span class="op">&lt;-</span> <span class="fu">download_polity_annual</span><span class="op">(</span>verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">polity</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2018</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">autoc</span> <span class="op">&gt;=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">democ</span> <span class="op">&gt;=</span><span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">polity</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2018</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">autoc</span> <span class="op">&gt;=</span><span class="fl">0</span> <span class="op">&amp;</span> <span class="va">democ</span> <span class="op">&gt;=</span><span class="fl">0</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">democ</span>, y <span class="op">=</span> <span class="va">autoc</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_smooth</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"grey80"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_jitter</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span><span class="op">+</span></span>
@@ -5096,21 +5096,21 @@ Abbildung&nbsp;3.5: Autokratie und Demokratie nach Polity V.
 </div>
 <p>Aus <a href="#fig-autoc_democ" class="quarto-xref">Abbildung&nbsp;<span>3.5</span></a> geht hervor, dass in den meisten Ländern hohe Werte auf der Demokratieskala mit niedrigen Werten auf der Autokratieskala einhergehen, sodass wir eine Häufung von Punkten (die für einzelne Länder stehen) rechts unten sehen. Hier finden sich die westeuropäischen und nordamerikanischen Staaten. Im Gegensatz weisen etwa Nordkorea, Saudi Arabien oder Syrien hohe Autokratie- und niedrige Demokratiewerte auf. Nur eine Reihe von Ländern hat niedrige Werte in beiden Skalen – diese Länder sind weder sehr demokratisch noch autokratisch. Dies galt 2018 für Afghanistan, Dschibuti, Mauretanien oder Uganda. Da die beiden Skalen nicht völlig unabhängig voneinander sind, werden sie häufig in eine integrierte Maßzahl, den “Polity-Score”, überführt, indem der Autokratiewert vom Demokratiewert abgezogen wird. Die neue Skala reicht dann von -10 bis 10 und wird im Datensatz mit dem Variablennamen <code>polity2</code> gekennzeichnet. Die linke Teilgrafik in <a href="#fig-polity2" class="quarto-xref">Abbildung&nbsp;<span>3.6</span></a> zeigt, wie sich dieser Wert im Länderdurchschnitt seit 1800 entwickelt hat. Auch mit dieser Maßzahl lassen sich die drei Wellen der Demokratisierung sowie die Autokratisierungsphasen in der Zwischenkriegszeit sowie in den 1960er Jahren ablesen. Ein Rückgang des Polity2-Indexes am Ende der Zeitperiode zeigt sich jedoch nicht, sondern lediglich ein Abflachen der Kurve.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">polity</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1799</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2019</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">summarise</span><span class="op">(</span>mean_polity2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">polity2</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">polity</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1799</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2019</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>mean_polity2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">polity2</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_polity2</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"orange"</span>, linewidth <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>,<span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>      y <span class="op">=</span> <span class="st">"Durchschnittlicher Polity2-Wert"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">polity</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1799</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2019</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">polity2</span><span class="op">&gt;</span><span class="fl">5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">summarise</span><span class="op">(</span>Anzahl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">democratic</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">polity</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1799</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2019</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">polity2</span><span class="op">&gt;</span><span class="fl">5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>Anzahl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">democratic</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Anzahl</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"orange"</span>, linewidth <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -5179,13 +5179,13 @@ Abbildung&nbsp;3.6: Demokratiemessung mit Polity V.
 <span><span class="co">#&gt; |Yemen, N.                      |Yemen (Arab Republic of Yemen)          | 678|  678|     1972|     1989| 17|</span></span>
 <span><span class="co">#&gt; |Zimbabwe                       |Zimbabwe (Rhodesia)                     | 552|  552|     1972|     2022| 50|</span></span>
 <span></span>
-<span><span class="va">fh</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">fh</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>frei <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
 <span>      <span class="va">status</span> <span class="op">==</span> <span class="st">"F"</span> <span class="op">~</span> <span class="st">"frei"</span>,</span>
 <span>      <span class="va">status</span> <span class="op">==</span> <span class="st">"PF"</span> <span class="op">~</span> <span class="st">"teilweise frei"</span>,</span>
-<span>      <span class="va">status</span> <span class="op">==</span> <span class="st">"NF"</span> <span class="op">~</span> <span class="st">"unfrei"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">frei</span>, <span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="va">status</span> <span class="op">==</span> <span class="st">"NF"</span> <span class="op">~</span> <span class="st">"unfrei"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">frei</span>, <span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">frei</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="st">"Anzahl"</span>, color <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5203,28 +5203,28 @@ Abbildung&nbsp;3.7: Freie, teilweise freie und unfreie Länder.
 <p>Viel mehr Länder der Welt werden heute, so lässt sich <a href="#fig-fh_pl_cl" class="quarto-xref">Abbildung&nbsp;<span>3.7</span></a> entnehmen, von <em>Freedom House</em> als frei kategorisiert als in der Vergangenheit. So galten 1972 nur 44 Länder als frei, aber 2021 sind es 83 Länder. Im Gegensatz dazu wurden vor 50 Jahren 69 Länder als unfrei eingeordnet, heute nur noch 56. Trotz dieser Zunahme an freien Ländern weist die Grafik auf eine Verschlechterung in den letzten Jahren hin. Denn seit 2008 hat sich die Anzahl der unfreien Länder um 14 erhöht, wohingegen im Maximum 90 Länder als frei galten. Wenn wir diese Trends als Hinweise auf den Zustand der liberalen Demokratie interpretieren, lässt sich ein Rückgang diagnostizieren.</p>
 <p>Den aktuell umfassendsten Versuch, Demokratie zu messen, stellt das <em>Varieties of Democracy</em>-Projekt bereit. Im Gegensatz beispielsweise zum DD-Datensatz liegen bei V-Dem <em>kontinuierliche Demokratiemaße</em> vor, die jeweils aus der Aggregation zahlreicher Unterindikatoren entstehen. Zwar werden diese koninuierlichen Maße anschließend häufig in kategoriale Maße umgewandelt, aber der Anspruch des Projektes ist es, feingliedrige Abstufungen der Demokratiequalität zu erfassen. Der Unterschied zwischen dichotomer und kontinuierlicher Messung lässt sich verdeutlichen, wenn wir dieselben Länder wie in <a href="#fig-dd_four_countries" class="quarto-xref">Abbildung&nbsp;<span>3.3</span></a> erneut betrachten, aber den V-Dem-Index der elektoralen Demokratie hinzufügen.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dd_short</span> <span class="op">&lt;-</span> <span class="va">dd</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1990</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dd_short</span> <span class="op">&lt;-</span> <span class="va">dd</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1990</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">extended_country_name</span>, <span class="va">Democracy</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">vdem_short</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1990</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">vdem_short</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1990</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">extended_country_name</span>, <span class="va">v2x_polyarchy</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">comparison</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">vdem_short</span>, <span class="va">dd_short</span>, by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"year"</span>, <span class="st">"extended_country_name"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">comparison</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">comparison</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">extended_country_name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Turkey (Ottoman Empire)"</span>, </span>
 <span>                                      <span class="st">"Tunisia"</span>,</span>
 <span>                                      <span class="st">"India"</span>,</span>
-<span>                                      <span class="st">"South Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>                                      <span class="st">"South Africa"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>country <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"Turkey (Ottoman Empire)"</span> <span class="op">~</span> <span class="st">"Türkei"</span>,</span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"Tunisia"</span> <span class="op">~</span> <span class="st">"Tunesien"</span>,</span>
 <span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"South Africa"</span> <span class="op">~</span> <span class="st">"Südafrika"</span>,</span>
-<span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"India"</span> <span class="op">~</span> <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="va">extended_country_name</span> <span class="op">==</span> <span class="st">"India"</span> <span class="op">~</span> <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Südafrika"</span>, <span class="st">"Türkei"</span>,</span>
-<span>                  <span class="st">"Tunesien"</span>, <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>                  <span class="st">"Tunesien"</span>, <span class="st">"Indien"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">v2x_polyarchy</span>,</span>
 <span>                color <span class="op">=</span> <span class="st">"V-Dem"</span><span class="op">)</span>,</span>
@@ -5254,11 +5254,11 @@ Abbildung&nbsp;3.8: Dichotomes und kontinuierliches Demokratiemaß für vier Lä
 <span></span>
 <span><span class="co"># absolute Anzahl der Demorkatietypen</span></span>
 <span></span>
-<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1900</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1900</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">v2x_egaldem</span>, </span>
-<span>         <span class="va">v2x_partipdem</span>, <span class="va">v2x_delibdem</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Index"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>         <span class="va">v2x_partipdem</span>, <span class="va">v2x_delibdem</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Index"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="co"># umbenennen der Indiktaren</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>Index <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_polyarchy"</span> <span class="op">~</span> <span class="st">"elektoral"</span>,</span>
@@ -5266,12 +5266,12 @@ Abbildung&nbsp;3.8: Dichotomes und kontinuierliches Demokratiemaß für vier Lä
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_egaldem"</span> <span class="op">~</span> <span class="st">"egalitär"</span>,</span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_partipdem"</span> <span class="op">~</span> <span class="st">"partizipativ"</span>,</span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_delibdem"</span> <span class="op">~</span> <span class="st">"deliberativ"</span></span>
-<span>  <span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="co"># Dichotomisierung</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Werte</span> <span class="op">&gt;=</span><span class="fl">0.5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">Index</span>, <span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Werte</span> <span class="op">&gt;=</span><span class="fl">0.5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">Index</span>, <span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="co"># Addieren der Einsen</span></span>
-<span>  <span class="fu">tally</span><span class="op">(</span><span class="va">democratic</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tally</span><span class="op">(</span><span class="va">democratic</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">Index</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">.8</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -5279,11 +5279,11 @@ Abbildung&nbsp;3.8: Dichotomes und kontinuierliches Demokratiemaß für vier Lä
 <span>  <span class="fu">theme</span><span class="op">(</span>axis.text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1900</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">vdem_simple</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1900</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">v2x_egaldem</span>, </span>
-<span>         <span class="va">v2x_partipdem</span>, <span class="va">v2x_delibdem</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Index"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>         <span class="va">v2x_partipdem</span>, <span class="va">v2x_delibdem</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Index"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="co"># umbenennen der Indiktaren</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>Index <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_polyarchy"</span> <span class="op">~</span> <span class="st">"elektoral"</span>,</span>
@@ -5291,11 +5291,11 @@ Abbildung&nbsp;3.8: Dichotomes und kontinuierliches Demokratiemaß für vier Lä
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_egaldem"</span> <span class="op">~</span> <span class="st">"egalitär"</span>,</span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_partipdem"</span> <span class="op">~</span> <span class="st">"partizipativ"</span>,</span>
 <span>    <span class="va">Index</span> <span class="op">==</span> <span class="st">"v2x_delibdem"</span> <span class="op">~</span> <span class="st">"deliberativ"</span></span>
-<span>  <span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="co"># Dichotomisierung</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Werte</span> <span class="op">&gt;=</span><span class="fl">0.5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">Index</span>, <span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">summarise</span><span class="op">(</span>Durchschnitt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Werte</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>democratic <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Werte</span> <span class="op">&gt;=</span><span class="fl">0.5</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">Index</span>, <span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>Durchschnitt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Werte</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Durchschnitt</span>, color <span class="op">=</span> <span class="va">Index</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>linewidth <span class="op">=</span> <span class="fl">.8</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NULL</span>, y <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -5340,20 +5340,20 @@ Zum Merken
 <span></span>
 <span><span class="va">vdemtotal</span> <span class="op">&lt;-</span> <span class="fu">vdemdata</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/vdemdata/man/vdem.html">vdem</a></span></span>
 <span></span>
-<span><span class="va">vdem_selected</span> <span class="op">&lt;-</span> <span class="va">vdemtotal</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">vdem_selected</span> <span class="op">&lt;-</span> <span class="va">vdemtotal</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country_name</span>, <span class="va">country_id</span>, <span class="va">year</span>, <span class="va">v2x_libdem</span>, <span class="va">e_wb_pop</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">vdem_selected</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1899</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>poptotal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">e_wb_pop</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>poprel <span class="op">=</span> <span class="va">e_wb_pop</span><span class="op">/</span><span class="va">poptotal</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">vdem_selected</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1899</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>poptotal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">e_wb_pop</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>poprel <span class="op">=</span> <span class="va">e_wb_pop</span><span class="op">/</span><span class="va">poptotal</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span>ungewichtet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">v2x_libdem</span><span class="op">)</span>,</span>
-<span>            gewichtet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/weighted.mean.html">weighted.mean</a></span><span class="op">(</span><span class="va">v2x_libdem</span>,<span class="va">poprel</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Indikator"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>            gewichtet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/weighted.mean.html">weighted.mean</a></span><span class="op">(</span><span class="va">v2x_libdem</span>,<span class="va">poprel</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span><span class="op">-</span><span class="va">year</span>, values_to <span class="op">=</span> <span class="st">"Werte"</span>, names_to <span class="op">=</span> <span class="st">"Indikator"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">Werte</span>, color <span class="op">=</span> <span class="fu">fct_relevel</span><span class="op">(</span><span class="va">Indikator</span>, <span class="st">"ungewichtet"</span>, <span class="st">"gewichtet"</span><span class="op">)</span>,</span>
 <span>  group <span class="op">=</span> <span class="va">Indikator</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span>linewidth<span class="op">=</span><span class="fl">.8</span><span class="op">)</span><span class="op">+</span></span>
@@ -5379,17 +5379,17 @@ Abbildung&nbsp;3.10: Gewichteter und ungewichteter Durchschnitt des V-Dem-Indika
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Datensatz einlesen</span></span>
 <span><span class="va">df_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://gesistsa.github.io/rio/reference/import.html">import</a></span><span class="op">(</span><span class="fu">here</span><span class="op">(</span><span class="st">"Daten"</span>, <span class="st">"Little-Meng"</span>, <span class="st">"df_little_meng.RDS"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">df_lm</span> <span class="op">&lt;-</span>  <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1980</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2021</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_lm</span> <span class="op">&lt;-</span>  <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;</span> <span class="fl">1980</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2021</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>regime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">==</span><span class="fl">0</span>, <span class="st">"Autokratie"</span>, <span class="st">"Demokratie"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>mean_partylose_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">partylose</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regime</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span>, <span class="va">regime</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>mean_partylose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">partylose</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>mean_partylose_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">partylose</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regime</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span>, <span class="va">regime</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>mean_partylose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">partylose</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_partylose_all</span>, color <span class="op">=</span> <span class="st">"Durchschnitt"</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_partylose</span>, color <span class="op">=</span> <span class="va">regime</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
@@ -5398,13 +5398,13 @@ Abbildung&nbsp;3.10: Gewichteter und ungewichteter Durchschnitt des V-Dem-Indika
 <span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>mean_lm_index_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">oindex</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regime</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span>, <span class="va">regime</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>mean_lm_index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">oindex</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>mean_lm_index_all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">oindex</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regime</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">year</span>, <span class="va">regime</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>mean_lm_index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">oindex</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_lm_index_all</span>, color <span class="op">=</span> <span class="st">"Durchschnitt"</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_lm_index</span>, color <span class="op">=</span> <span class="va">regime</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
@@ -5432,15 +5432,15 @@ Abbildung&nbsp;3.11: Objektive Indikatoren. Daten: Little &amp; Meng
 <span></span>
 <span><span class="co"># alle Länder</span></span>
 <span></span>
-<span><span class="va">df_corr</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_corr</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">rename</span><span class="op">(</span></span>
 <span>    FH <span class="op">=</span> <span class="va">fh_total_reversed</span>,</span>
 <span>    Polity <span class="op">=</span> <span class="va">polity2</span>,</span>
 <span>    EDI <span class="op">=</span> <span class="va">v2x_polyarchy</span>,</span>
 <span>    LDI <span class="op">=</span> <span class="va">v2x_libdem</span>,</span>
 <span>    LM <span class="op">=</span> <span class="va">oindex</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">corr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df_corr</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
@@ -5453,16 +5453,16 @@ Abbildung&nbsp;3.11: Objektive Indikatoren. Daten: Little &amp; Meng
 <span></span>
 <span><span class="co"># nur Demokratien</span></span>
 <span></span>
-<span><span class="va">df_corr_demo</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">regime</span> <span class="op">==</span> <span class="st">"Demokratie"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_corr_demo</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">regime</span> <span class="op">==</span> <span class="st">"Demokratie"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">rename</span><span class="op">(</span></span>
 <span>    FH <span class="op">=</span> <span class="va">fh_total_reversed</span>,</span>
 <span>    Polity <span class="op">=</span> <span class="va">polity2</span>,</span>
 <span>    EDI <span class="op">=</span> <span class="va">v2x_polyarchy</span>,</span>
 <span>    LDI <span class="op">=</span> <span class="va">v2x_libdem</span>,</span>
 <span>    LM <span class="op">=</span> <span class="va">oindex</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">corr_demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df_corr_demo</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
@@ -5475,16 +5475,16 @@ Abbildung&nbsp;3.11: Objektive Indikatoren. Daten: Little &amp; Meng
 <span></span>
 <span><span class="co"># alle Länder bis 2010</span></span>
 <span></span>
-<span><span class="va">df_corr</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2011</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_corr</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2011</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">rename</span><span class="op">(</span></span>
 <span>    FH <span class="op">=</span> <span class="va">fh_total_reversed</span>,</span>
 <span>    Polity <span class="op">=</span> <span class="va">polity2</span>,</span>
 <span>    EDI <span class="op">=</span> <span class="va">v2x_polyarchy</span>,</span>
 <span>    LDI <span class="op">=</span> <span class="va">v2x_libdem</span>,</span>
 <span>    LM <span class="op">=</span> <span class="va">oindex</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">corr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df_corr</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
@@ -5497,17 +5497,17 @@ Abbildung&nbsp;3.11: Objektive Indikatoren. Daten: Little &amp; Meng
 <span></span>
 <span><span class="co"># nur Demokratien bis 2010</span></span>
 <span></span>
-<span><span class="va">df_corr_demo</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">regime</span> <span class="op">==</span> <span class="st">"Demokratie"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2011</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="va">df_corr_demo</span> <span class="op">&lt;-</span> <span class="va">df_lm</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">regime</span> <span class="op">==</span> <span class="st">"Demokratie"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&lt;</span> <span class="fl">2011</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">fh_total_reversed</span>, <span class="va">polity2</span>, <span class="va">v2x_polyarchy</span>, <span class="va">v2x_libdem</span>, <span class="va">oindex</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">rename</span><span class="op">(</span></span>
 <span>    FH <span class="op">=</span> <span class="va">fh_total_reversed</span>,</span>
 <span>    Polity <span class="op">=</span> <span class="va">polity2</span>,</span>
 <span>    EDI <span class="op">=</span> <span class="va">v2x_polyarchy</span>,</span>
 <span>    LDI <span class="op">=</span> <span class="va">v2x_libdem</span>,</span>
 <span>    LM <span class="op">=</span> <span class="va">oindex</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">corr_demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df_corr_demo</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span></span>
