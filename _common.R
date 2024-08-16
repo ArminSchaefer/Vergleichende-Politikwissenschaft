@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 # load packages
 
 if(!require("pacman")) {install.packages("pacman");library(pacman)}
-p_load(here, rnaturalearth, tmap, palmerpenguins, democracyData, tidyverse)
+p_load(here, democracyData, tidyverse)
 
 
 # set a theme

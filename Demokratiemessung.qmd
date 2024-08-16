@@ -78,7 +78,7 @@ Je nachdem, welche Demokratiedefinition zugrunde gelegt wird, so sollte aus dies
 
 Fast alle heutigen Demokratieindizes stützen sich auf die Pionierarbeit von @Dahl.1971, in der er ein *minimalistisch-prozedurales Demokratieverständnis* entwickelte und auf dieser Grundlage Dimensionen und Indikatoren festlegte, um erfassen zu können, welche Länder demokratisch sind. Dahls Verständnis ist minimalistisch, weil es sich im Kern darauf bezieht, wie stark der Wettbewerb um politische Macht ausgeprägt ist und wer sich an Wahlen beteiligen darf. Das heißt, ihm geht es um "Input-Legitimation", nicht aber darum, ob die Regierung effektiv durch andere Akteure kontrolliert wird oder ob auf diese Weise gute Politikergebnisse (= Output) erzielt werden. Um zu erfassen, ob ein Land demokratisch ist, schlägt er deshalb vor, die zwei Dimensionen "Wettbewerb" und "Partizipation/Inklusion" in den Blick zu nehmen. Nur wenn der Wettbewerbsgrad bei und die Partizipation an Wahlen hoch sind, kann von einer Demokratie gesprochen werden. 
 
-::: {.callout-note}
+::: {.callout-note title="Begriffe: Polyarchie"}
 @Dahl.1971 vermied das Wort "Demokratie", um Regierungssysteme zu beschreiben, und verwendete stattdesssen den Begriff **Polyarchie** (Herrschaft der Vielen), da er meinte, dass kein Staat das Ideal der Demokratie vollständig erreichen könne. Doch dieser Begriff hat sich nicht durchsetzen können und wird heute nur noch selten verwendet.
 :::
 
