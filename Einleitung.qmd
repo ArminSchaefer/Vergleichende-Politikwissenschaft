@@ -25,28 +25,18 @@ ggplot(
 
 ```
 
-
-::: {.border}
-
+::: border
 Text in einer Box.
-
 :::
 
-
 ::: {.callout-important title="Wichtig!"}
-
 Die ist wichtig
-
 :::
 
 ::: {.callout-warning title="Vorsicht!"}
-
 Hierauf müssen Sie achten.
-
 :::
 
 ::: {.callout-tip title="Tipp"}
-
 Verwenden Sie zunächst Befehl xyz.
-
 :::

@@ -18,7 +18,7 @@ p_load(here, rio, gt, ggcorrplot, psych, ggrepel, modelsummary, patchwork, tidyv
 
 ```
 
-> "Here I show that consensus democracy tends to be the 'kinder, gentler' form of democracy. [...] Consensus democracies demonstrate these kinder and gentler qualities in the following ways: they are more likely to be welfare states; they have a better record with regard to the protection of the environment; they put fewer people in prison and are less likely to use the death penalty; and the consensus democracies in the developed world are more generous with their economic assistance to the developing nations" [@Lijphart.2012: 274-275].
+> "Here I show that consensus democracy tends to be the 'kinder, gentler' form of democracy. \[...\] Consensus democracies demonstrate these kinder and gentler qualities in the following ways: they are more likely to be welfare states; they have a better record with regard to the protection of the environment; they put fewer people in prison and are less likely to use the death penalty; and the consensus democracies in the developed world are more generous with their economic assistance to the developing nations" [@Lijphart.2012: 274-275].
 
 Eine der berühmtesten Unterscheidungen in der Vergleichenden Politikwissenschaft ist die zwischen "**Konsens-**" und "**Mehrheitsdemokratien**", die von Arend Lijphart eingegeführt wurde. Diese zwei Formen der Demokratie sind nicht nur unterschiedlich aufgebaut, sondern führen auch, wie im Zitat oben dargelegt, aus Lijpharts Sicht zu systematisch unterschiedlichen *Politikergebnissen*. Aus seiner Sicht sind Konsensdemokratien normativ überlegen, weil sie zu besseren Ergebnissen führen -- sie gehen "großzügiger" und "sanfter" mit den Bürger:innen um, während Mehrheitsdemokratien harscher sind. In diesem Kapitel beschäftigen wir uns damit, warum dies so sein könnten. Dafür stellen wir erst Lijpharts Grundmodell dar, diskutieren dann einige Kritikpunkte und führen anschließend ein politiköknomisches Modell ein, das erklärt, warum in Konsensdemokratien mehr Umverteilung stattfindet.
 
@@ -32,24 +32,24 @@ Auch in anderen Ländern gab es tiefe Konflikte, denen begegnet wurde, indem For
 
 ## Konsens- und Mehrheitsdemokratien
 
-Die mit Blick auf gespaltene Gesellschaften gewonnenen Einsichten verallgemeinerte Lijphart in einem späteren Buch, indem er die beiden Grundtypen "Konsens-" und "Mehrheitsdemokratien" unterscheidet [@Lijphart.2012]. Dabei geht er davon aus, dass sich Länder sich entweder vorwiegend am Konsens- oder am Mehrheitsprinzip orientieren. 
+Die mit Blick auf gespaltene Gesellschaften gewonnenen Einsichten verallgemeinerte Lijphart in einem späteren Buch, indem er die beiden Grundtypen "Konsens-" und "Mehrheitsdemokratien" unterscheidet [@Lijphart.2012]. Dabei geht er davon aus, dass sich Länder sich entweder vorwiegend am Konsens- oder am Mehrheitsprinzip orientieren.
 
 Das *Konsensprinzip* versucht, so viele Gruppen wie möglich in Entscheidungen einzubinden und zu repräsentieren:
 
-* Macht wird auf viele verteilt und dadurch begrenzt,
-* auch (numerische) Minderheiten sollen die Möglichkeit haben, Politik zu beeinflussen,
-* politische Entscheidung werden im Parlament ausgehandelt, aber auch Interessengruppen (z.B. Gewerkschaften und Arbeitergeberverbänden) werden häufig konsulitiert (Korporatismus) und es 
-* bestehen vielfache Mitspracherechte der von Entscheidungen betroffenen Gruppen.
+-   Macht wird auf viele verteilt und dadurch begrenzt,
+-   auch (numerische) Minderheiten sollen die Möglichkeit haben, Politik zu beeinflussen,
+-   politische Entscheidung werden im Parlament ausgehandelt, aber auch Interessengruppen (z.B. Gewerkschaften und Arbeitergeberverbänden) werden häufig konsulitiert (Korporatismus) und es
+-   bestehen vielfache Mitspracherechte der von Entscheidungen betroffenen Gruppen.
 
-Im Gegensatz dazu sieht das *Mehrheitsprinzip* vor, dass politische Entscheidungen  möglichst eindeutig dem Willen der Mehrheit der Bürger:innen entsprechen:
+Im Gegensatz dazu sieht das *Mehrheitsprinzip* vor, dass politische Entscheidungen möglichst eindeutig dem Willen der Mehrheit der Bürger:innen entsprechen:
 
-* Machtkonzentration im Parlament und dort in den Händen der Regierung(sfraktionen),
-* Ausübung dieser Macht mit relativ wenig Einschränkungen durch andere politische Akteur:innen,
-* klare Zurechnung von Regierungshandeln und Verantwortlichkeit. Die Bürger:innen drücken (rückblickend) an der Wahlurne aus, wie zufrieden sie mit der Regierung sind,
-* nicht gewählte Interessengruppen können zwar versuchen, Politik zu beeinflussen (Lobbyismus), haben aber keinen Anspruch darauf, gehört zu werden.
+-   Machtkonzentration im Parlament und dort in den Händen der Regierung(sfraktionen),
+-   Ausübung dieser Macht mit relativ wenig Einschränkungen durch andere politische Akteur:innen,
+-   klare Zurechnung von Regierungshandeln und Verantwortlichkeit. Die Bürger:innen drücken (rückblickend) an der Wahlurne aus, wie zufrieden sie mit der Regierung sind,
+-   nicht gewählte Interessengruppen können zwar versuchen, Politik zu beeinflussen (Lobbyismus), haben aber keinen Anspruch darauf, gehört zu werden.
 
 ::: {.callout-note title="Begriffe: Konkordanz- vs. Konsensdemokratie"}
-Den Begriff "Konkordanzdemokratie" wendet Lijphart auf tief gespaltene Gesellschaften an. Der daraus hervorgegangene Begriff der "Konsensdemokratie" wird aber für alle Länder verwendet, die eine ausgeprägte Form der horizontalen und vertikalen Machtteilung aufweisen, auch wenn sie nicht besonders konfliktreich sind. Konkordanzdemokratien sind also eine Untergruppe der Konsensdemokratien. 
+Den Begriff "Konkordanzdemokratie" wendet Lijphart auf tief gespaltene Gesellschaften an. Der daraus hervorgegangene Begriff der "Konsensdemokratie" wird aber für alle Länder verwendet, die eine ausgeprägte Form der horizontalen und vertikalen Machtteilung aufweisen, auch wenn sie nicht besonders konfliktreich sind. Konkordanzdemokratien sind also eine Untergruppe der Konsensdemokratien.
 :::
 
 Ursprünglich ging Lijphart davon aus, zwischen den Institutionen eines Lands bestehe eine Art "Wahlverwandtschaft", d.h. er erwartete entweder eine durchgängige Orientierung am Konsens- oder am Mehrheitsprinzip, wodurch sich ein Kontinuum zwischen beiden Demokratietypen ergeben würde. Doch empirisch zeigen sich zwei Dimensionen, die nicht deckungsgleich sind. Die erste Dimension hängt stark vom Wahlsystem ab. In Konsensdemokratien gilt eine Form des proportionalen Wahlrechts, wohingegen Mehrheitsdemokratien eine Variante des Mehrheitswahlrechts anwenden (siehe Kapitel XX). Je proportionaler das Wahlsystem, desto mehr Parteien ziehen ins Parlament ein, was wiederum häufig Koalitionsregierungen erzwingt. Das Mehrheitswahlsystem macht hingegen Ein-Parteien-Regierungen wahrscheinlicher. Die Ausgestaltung des Wahlsystems erzwingt demnach entweder die Zusammenarbeit von Parteien oder macht sie weniger notwendig. Etwas quer dazu liegt die Rolle von Interessengruppen. In Konsensdemokratien werden die so genannten Sozialpartner (Gewerkschaften und Arbeitgeber- und Industrieverbände) an der Gesetzgebung beteiligt oder haben sogar eigenständige Entscheidungsbefugnisse (Tarifverhandlungen, Entwicklung von Ausbildungsberufen), wohingegen dies in Mehrheitsdemokratien nicht der Fall ist.
@@ -60,21 +60,23 @@ Lijphart kommt auf diese beiden Dimensionen, indem er zehn Variablen für 36 kon
 
 Exekutive-Parteien-Dimension:
 
-1) Grad der Konzentration der Exekutivmacht
-2) Kräfteverhältnis zwischen Exekutive und Legislative
-3) Fragmentierungsgrad des Parteiensystems
-4) Disproportionalität der Stimmen- und Parlamentssitzverteilung
-5) Pluralistische oder korporatistische Staat-Verbände-Beziehung
+1)  Grad der Konzentration der Exekutivmacht
+2)  Kräfteverhältnis zwischen Exekutive und Legislative
+3)  Fragmentierungsgrad des Parteiensystems
+4)  Disproportionalität der Stimmen- und Parlamentssitzverteilung
+5)  Pluralistische oder korporatistische Staat-Verbände-Beziehung
 
 Föderalismus-Unitarismus-Dimension:
 
-6) Machtaufteilung der Staatsstruktur (Föderalismus versus Einheitsstaat)
-7) Konzentrations- bzw. Aufteilungsgrad der Legislativmacht (Einkammer- bzw. Zweikammersystem)
-8) Schwierigkeit von Verfasssungsänderungen
-9) Letztentscheidungsrecht über Gesetze (Parlament oder Verfassungsgerich
+6)  Machtaufteilung der Staatsstruktur (Föderalismus versus Einheitsstaat)
+7)  Konzentrations- bzw. Aufteilungsgrad der Legislativmacht (Einkammer- bzw. Zweikammersystem)
+8)  Schwierigkeit von Verfasssungsänderungen
+9)  Letztentscheidungsrecht über Gesetze (Parlament oder Verfassungsgerich
 10) Grad der Zentralbankautonomie
 
-Die verwendeten Daten sind als Word-Dokument abrufbar^[Die Daten finden sich auf Lijpharts [Webseite](https://polisci.ucsd.edu/people/faculty/faculty-directory/emeriti-faculty/lijphart-profile.html).] und können als Excel-Datei in `R` eingelesen werden.
+Die verwendeten Daten sind als Word-Dokument abrufbar[^bessere-demokratie-1] und können als Excel-Datei in `R` eingelesen werden.
+
+[^bessere-demokratie-1]: Die Daten finden sich auf Lijpharts [Webseite](https://polisci.ucsd.edu/people/faculty/faculty-directory/emeriti-faculty/lijphart-profile.html).
 
 ```{r}
 #| label: fig-examples
@@ -178,7 +180,9 @@ loadings %>%
 
 ```
 
-In den empirischen Analysen arbeitet Lijphart mit den beiden Faktoren, die die beiden Dimensionen einfangen.^[Die im Folgenden gezeigten Daten weichen von denen in @Lijphart.2012 ab, weil er die Variablen zunächst stadardisiert und sie so umkodiert, dass höhere Werte stets unitarische Länder mit Mehrheitswahlsystem kennzeichnen. Die Logik bleibt davon jedoch unberührt.] Statt nur einzelne Aspekte der Demokratietypen erfassen zu könnnen, werden auf diese Weise die zusammengefassten Werte der zehn Variablen dargestellt. In @fig-two_dimensions sind die Werte für alle Länder im zweidimensionalen Raum dargestellt. Konsensdemokratie, die föderal organisiert sind und ein proporationales Wahlsystem haben, finden sich linken oberen Quadranten. Dazu zählen Deutschland und die Schweiz, aber auch Österreich und Indien. Mehrheitsdemokratien, die das Gegenmodell abbilden, befinden sich im linken unteren Quadranten. Hier sind vor allem das Vereinigte Königreich und dessen ehemaligen Kolonien zu finden. Allerdings, und auch das geht aus der Abbildung hervor, gibt es zahlreiche Länder, die Mischtypen sind und nicht zur Aufteilung in nur zwei Demokratiemodelle entsprechen. Die USA, Kanada und Australien sind stark föderal organisierte Staaten, die jedoch auf ein Mehrheitswahlsystem zurückgreifen (rechter oberer Quadrant), wohingegen die nordischen Länder unitarisch aufgebaut sind, aber über proportionale Wahlsysteme verfügen (linker unterer Quadrant).
+In den empirischen Analysen arbeitet Lijphart mit den beiden Faktoren, die die beiden Dimensionen einfangen.[^bessere-demokratie-2] Statt nur einzelne Aspekte der Demokratietypen erfassen zu könnnen, werden auf diese Weise die zusammengefassten Werte der zehn Variablen dargestellt. In @fig-two_dimensions sind die Werte für alle Länder im zweidimensionalen Raum dargestellt. Konsensdemokratie, die föderal organisiert sind und ein proporationales Wahlsystem haben, finden sich linken oberen Quadranten. Dazu zählen Deutschland und die Schweiz, aber auch Österreich und Indien. Mehrheitsdemokratien, die das Gegenmodell abbilden, befinden sich im linken unteren Quadranten. Hier sind vor allem das Vereinigte Königreich und dessen ehemaligen Kolonien zu finden. Allerdings, und auch das geht aus der Abbildung hervor, gibt es zahlreiche Länder, die Mischtypen sind und nicht zur Aufteilung in nur zwei Demokratiemodelle entsprechen. Die USA, Kanada und Australien sind stark föderal organisierte Staaten, die jedoch auf ein Mehrheitswahlsystem zurückgreifen (rechter oberer Quadrant), wohingegen die nordischen Länder unitarisch aufgebaut sind, aber über proportionale Wahlsysteme verfügen (linker unterer Quadrant).
+
+[^bessere-demokratie-2]: Die im Folgenden gezeigten Daten weichen von denen in @Lijphart.2012 ab, weil er die Variablen zunächst stadardisiert und sie so umkodiert, dass höhere Werte stets unitarische Länder mit Mehrheitswahlsystem kennzeichnen. Die Logik bleibt davon jedoch unberührt.
 
 ```{r}
 #| label: fig-two_dimensions
@@ -274,8 +278,7 @@ modelsummary(models,
 
 ```
 
-:::{.callout-important title="Statistik einfach erklärt"}
-
+::: {.callout-important title="Statistik einfach erklärt"}
 Der **Standardfehler** (S.E. für Standard Error in @tbl-lijphart_regresstiontabelle) in Regressionsmodellen ist eine Maßzahl, die die Genauigkeit der geschätzten Koeffizienten angibt. Er gibt uns eine Vorstellung davon, wie viel die geschätzten Werte der Koeffizienten von den tatsächlichen, aber unbekannten Werten abweichen.
 
 Stellen Sie sich vor, Sie möchten den Einfluss einer bestimmten Variable (zum Beispiel die Anzahl der Lernstunden) auf ein Ergebnis (zum Beispiel die Testergebnisse bei einer Klausur) untersuchen. Sie sammeln Daten und verwenden eine Regressionsanalyse, um herauszufinden, wie stark der Zusammenhang zwischen den Lernstunden einerseits und den Testergebnissen andererseits ist.
@@ -289,7 +292,7 @@ Der Standardfehler dieses Koeffizienten hilft einzuordnen, wie präzise diese Sc
 
 Obowohl @Lijphart.2012 nur zwei Grundtypen der Demokratie unterscheidet -- "Mehrheits-" und "Konsensdemokratien" -- passen viele Länder nicht in dieses Muster. Es gibt nicht nur majoritär-unitarische und proportional-föderale Länder, wie es die Typologie nahelegt, sondern auch majoritär-föderale und proportional-unitarische Länder (siehe @fig-two_dimensions). Diese zwei abweichenden Typen bekommen bei Lijphart aber keinen eigenen Namen, und den Unterschieden zwischen den Subvarianten widmet er keine große Aufmerksamkeit. Dass ihn besonders die "Exekutive-Parteien-Dimension" interessiert, zeigt sich auf in den empirischen Analysen. Hier wird der Indexwert dieser Dimension verwendet, um die Überlegenheit der Konsensdemokratien nachzuweisen. Ob ein föderaler Staatsaufbau vorliegt oder nicht, scheint für diese Frage nicht ausschlaggebend zu sein.
 
-Darüber hinaus kann auch daran gezweifelt werden, ob der Begriff "Mehrheitsdemokratie" gut gewählt ist. Ein Merkmal bspw. von Mehrheitswahlsystemen ist, dass  häufig eine relative Mehrheit der Stimmen -- also weniger als 50 Prozent -- ausreichen, um eine absolute Mehrheit der Parlamentssitze zu erzielen (das nennt sich "geschaffene Mehrheit"). Im Gegensatz dazu beruht eine Parlamentsmehrheit in proportionalen Wahlsystemen in der Regel auch auf einer absoluten Mehrheit der Stimmen. Wenn es also darum geht, die Mehrheit der (wählenden) Bevölkerung zu repräsentieren, gelingt dies in Verhältniswahlsystemen besser als in Mehrheitswahlsystemen. Etwas überspitzt ließe sich argumentieren, in Mehrheitsdemokratien regieren Minderheiten.
+Darüber hinaus kann auch daran gezweifelt werden, ob der Begriff "Mehrheitsdemokratie" gut gewählt ist. Ein Merkmal bspw. von Mehrheitswahlsystemen ist, dass häufig eine relative Mehrheit der Stimmen -- also weniger als 50 Prozent -- ausreichen, um eine absolute Mehrheit der Parlamentssitze zu erzielen (das nennt sich "geschaffene Mehrheit"). Im Gegensatz dazu beruht eine Parlamentsmehrheit in proportionalen Wahlsystemen in der Regel auch auf einer absoluten Mehrheit der Stimmen. Wenn es also darum geht, die Mehrheit der (wählenden) Bevölkerung zu repräsentieren, gelingt dies in Verhältniswahlsystemen besser als in Mehrheitswahlsystemen. Etwas überspitzt ließe sich argumentieren, in Mehrheitsdemokratien regieren Minderheiten.
 
 Der positive Effekt der Konsensdemokratie resultiert für Lijphart aus dem Verhandlungszwang, den das Wahlsystem und der Staatsaufbau erzeugen. Doch es nicht das einzig mögliche Ergebnis, dass sich die Akteure darauf einlassen, geduldig Kompromisse auszuhandeln. Mitsprache eröffnet auch die Möglichkeit der Obstruktion. Bei @Tsebelis.1995 erhöht die Anzahl an "Vetospieler:innen" die *Blockademöglichkeiten*. Statt Konsens kann aus Vetomacht auch *Konflikt* resultieren. Ob "Konsensdemokratien" zu Kooperation und Kompromiss führen, hängt auch davon ab, ob entscheidende Akteure einen Vorteil darin erkennen oder ob sich stattdessen bessere Wahlergebnisse versprechen, wenn sie sich kompromisslos verhalten und auf ihren Prinzipien beharren.
 
@@ -297,23 +300,21 @@ Schließlich lassen sich die Ergebnisse nicht ohne weiteres auf andere Staaten �
 
 ## Ein politkökonomisches Modell der Umverteilung {#sec-redistribution}
 
-In @tbl-lijphart_regresstiontabelle wurde gezeigt, dass stärker mehrheitsdemokratische Länder eine höhere Einkommensungleichheit aufweisen. Warum aber sollten Konsensdemokratien Einkommen stärker umverteilen? Was genau ist der Mechanismus? Nach Lijphart müsste dies eine Folge der institutionalisierten Verhandlungszwänge sein. Doch nur, wenn auch verteilungsorientierte Parteien an diesen Verhandlungen teilnehmen, würde dies die Umverteilung erhöhen. Eine Koalition aus einer konservativen und einer liberalen Partei müsste zwar auch Kompromisse schließen, aber diese würde eher nicht zu mehr Umverteilung führen. Es ist also entscheidend, welche Parteien an politischen Entscheidungen beteiligt sind, denn eine Standardannahme der vergleichenden Wohlfahrtsstaatsforschung ist, dass linke Parteien stärker umverteilen. Falls in Konsensdemokratien also Mitte-Links-Parteien systematisch häufiger regieren, wäre das Modell plausibel. Und genau bei dieser empirischen Beobachtung setzt ein politökonmisches Modell der Verteilung an. @Iversen.2006[: 166] zeigen für 17 Länder zwischen 1945 und 1998, dass in Ländern mit Verhältniswahlsystemen linke Parteien sehr viel häufiger an der Regierung beteiligt sind als in solchen mit Mehrheitswahlsystem [siehe auch @Doring.2017]. Dies ist so, weil sich die Medianwählerin in Mehrheitswahlsystemen häufiger für Mitte-Rechts-, in Verhältniswahlsystemen für  Mitte-Links-Parteien entscheidet. Um dies zu verstehen, hilft ein stilisierte Modell des Wahlverhaltens.
+In @tbl-lijphart_regresstiontabelle wurde gezeigt, dass stärker mehrheitsdemokratische Länder eine höhere Einkommensungleichheit aufweisen. Warum aber sollten Konsensdemokratien Einkommen stärker umverteilen? Was genau ist der Mechanismus? Nach Lijphart müsste dies eine Folge der institutionalisierten Verhandlungszwänge sein. Doch nur, wenn auch verteilungsorientierte Parteien an diesen Verhandlungen teilnehmen, würde dies die Umverteilung erhöhen. Eine Koalition aus einer konservativen und einer liberalen Partei müsste zwar auch Kompromisse schließen, aber diese würde eher nicht zu mehr Umverteilung führen. Es ist also entscheidend, welche Parteien an politischen Entscheidungen beteiligt sind, denn eine Standardannahme der vergleichenden Wohlfahrtsstaatsforschung ist, dass linke Parteien stärker umverteilen. Falls in Konsensdemokratien also Mitte-Links-Parteien systematisch häufiger regieren, wäre das Modell plausibel. Und genau bei dieser empirischen Beobachtung setzt ein politökonmisches Modell der Verteilung an. @Iversen.2006 \[: 166\] zeigen für 17 Länder zwischen 1945 und 1998, dass in Ländern mit Verhältniswahlsystemen linke Parteien sehr viel häufiger an der Regierung beteiligt sind als in solchen mit Mehrheitswahlsystem [siehe auch @Doring.2017]. Dies ist so, weil sich die Medianwählerin in Mehrheitswahlsystemen häufiger für Mitte-Rechts-, in Verhältniswahlsystemen für Mitte-Links-Parteien entscheidet. Um dies zu verstehen, hilft ein stilisierte Modell des Wahlverhaltens.
 
 ::: {.callout-note title="Begriffe: Median Voter"}
-
 Der Begriff "Medianwähler:in" stammt aus der politischen Ökonomie und beschreibt die Wähler:in, deren Präferenzen genau in der Mitte aller Wähler:innen liegen. Wenn wir annehmen, dass sich politische Präferenzen anhand einer Dimension, z.B. der Links-rechts-Achse, ordnen lassen, können alle Wähler:innen von extrem links nach extrem rechts sortiert werden. Die Medianwähler:in liegt genau in der Mitte dieser Aufreihung, was bedeutet, dass es genauso viele Wähler:innen gibt, die eine Position links von ihr einnehmen, wie es Wähler:innen gibt, die eine Position rechts von ihr einnehmen. In diesem Modell erhält ein Reformvorschlag nur dann eine Mehrheit, wenn auch die Medianwähler:in zustimmt.
-
 :::
 
 In einer hypothetischen Gesellschaft gibt es drei Gruppen, die sich anhand des Einkommens unterscheiden: **N**iedrig (33,3%), **M**ittel (33,3%) und **H**och (33,3%). Die Medianwähler:in gehört der Gruppe **M** an. Die Gruppen verfolgen folgende Ziele:
 
-* **N** möchte die Einkommensumverteilung stärken und deshalb sowohl **M** als auch **H** höher besteuern.
+-   **N** möchte die Einkommensumverteilung stärken und deshalb sowohl **M** als auch **H** höher besteuern.
 
-* **M** akzeptiert höhere Umverteilung, solange nur **H** höher besteuert wird, und 
+-   **M** akzeptiert höhere Umverteilung, solange nur **H** höher besteuert wird, und
 
-* **H** möchte weniger Umverteilung und niedrigere Steuern.
+-   **H** möchte weniger Umverteilung und niedrigere Steuern.
 
-Die Präferenzen der drei Gruppen lassen sich wie in @tbl-präferenzen ordnen, wobei "1" für die am wenigsten und "3" für die am stärksten gewünschte Option steht. 
+Die Präferenzen der drei Gruppen lassen sich wie in @tbl-präferenzen ordnen, wobei "1" für die am wenigsten und "3" für die am stärksten gewünschte Option steht.
 
 ```{r}
 #| label: tbl-präferenzen
@@ -339,7 +340,9 @@ table %>%
 
 Passend zu den drei Optionen gibt es, so nehmen wir an, drei Parteien: "Links", "Zentrum" und "Rechts". Die Wähler:innen der Gruppe **M** müssen sich nun entscheiden, für welche Partei sie stimmen, um die eigenen Umverteilgungsräferenzen bestmöglich durchzusetzen. Dabei nehmen wir an, dass jede an einer Koalition beteiligte Partei über ein Veto verfügt und Positionen innerhalb von Parteien per Mehrheitsbeschluss festgelegt werden. Für welche Partei sich **M** entscheidet, und das ist der entscheidende Zusammenhang zwischen Demokratietyp und Umverteilung, hängt vom Wahlsystem ab.
 
-In einem proportionalen Wahlsystem würden die drei Parteien jeweils ein Drittel der Stimmen und damit einen Drittel der Parlamentssitze erhalten. Da keine Partei alleine über eine Mehrheit  verfügt, muss eine Koalition gebildet werden. Die von der Medianwähler:in unterstützte Partei "Zentrum" kann sich entscheiden, ob sie mit "Links" oder "Rechts" koaliert. Wie sie sich entscheidet, lässt sich anhand des Entscheidungsbaums ableiten, der in @fig-decision_proportional abgebildet ist. In einer Mitte-Rechts-Koalition würde die höhere Besteuerung von hohen Einkommen durch **R** blockiert werden, weil dies die am wenigsten erwünschte Option ist.^[Die Präferenzen im Entscheidungsbaum sind so geordnet, dass immer an erster Stelle die Präferenzen von **M** abgetragen sind, dann die der jeweils anderen Gruppe.] **Z** würde höhere Steuern für **H** und **M** ablehnen, weil dies aus ihrer Sicht die schlechteste Variante ist. Das heißt, die Parteien könnten sich auf die dritte Option einigen, mit der die Steuern nicht erhöht werden und die Umverteilung gleich bleibt. In dieser Koalition könnte die Partei **Z** also die mittlere Präferenz der Gruppe **M** durchsetzen.
+In einem proportionalen Wahlsystem würden die drei Parteien jeweils ein Drittel der Stimmen und damit einen Drittel der Parlamentssitze erhalten. Da keine Partei alleine über eine Mehrheit verfügt, muss eine Koalition gebildet werden. Die von der Medianwähler:in unterstützte Partei "Zentrum" kann sich entscheiden, ob sie mit "Links" oder "Rechts" koaliert. Wie sie sich entscheidet, lässt sich anhand des Entscheidungsbaums ableiten, der in @fig-decision_proportional abgebildet ist. In einer Mitte-Rechts-Koalition würde die höhere Besteuerung von hohen Einkommen durch **R** blockiert werden, weil dies die am wenigsten erwünschte Option ist.[^bessere-demokratie-3] **Z** würde höhere Steuern für **H** und **M** ablehnen, weil dies aus ihrer Sicht die schlechteste Variante ist. Das heißt, die Parteien könnten sich auf die dritte Option einigen, mit der die Steuern nicht erhöht werden und die Umverteilung gleich bleibt. In dieser Koalition könnte die Partei **Z** also die mittlere Präferenz der Gruppe **M** durchsetzen.
+
+[^bessere-demokratie-3]: Die Präferenzen im Entscheidungsbaum sind so geordnet, dass immer an erster Stelle die Präferenzen von **M** abgetragen sind, dann die der jeweils anderen Gruppe.
 
 Sehen wir uns nun die andere Seite des Entscheidungsbaums an, bei der **Z** einen Koalition mit **L** eingeht. Nach derselben Logik wie eben würden die Parteien sich auf die Option einigen, dass die Steuern nur für **H** erhöht werden, weil die beiden anderen Varianten jeweils von einer der Parteien blockiert würden. In diesem Fall würde **Z** die bestmögliche Option für **M** erreichen, nämlich mehr Umverteilung durch Steuern, ohne selbst mehr Steuern zahlen zu müssen. In einem proportionalen Wahlsystem wäre es demnach besser für **M**, wenn eine Mitte-Links-Koalition regiert.
 
@@ -352,9 +355,13 @@ knitr::include_graphics(here("Bilder", "Entscheidung_Verhältniswahl.png"))
 
 ```
 
-Ganz anders sieht es in einem Land mit Mehrheitswahlsystem aus. Dort bildet sich über Zeit ein Zweiparteiensystem aus, bei dem nur die Parteien **L** und **R** im Parlament vertreten sind.^[In der Realität muss das nicht so sein, wie Großbritannien zeigt, aber dennoch haben bislang nur Labour und die Conservatives die Premierminister:in stellen können. In den USA haben nur Demokraten und Republikaner Chancen, in den Kongress einzuziehen -- hier besteht in reines Zweiparteiensystem.] Für Angehörige der Gruppe **M** stellt sich nun die Frage, für welche der beiden Parteien sie stimmen. Nehmen wir an, die eine Hälfte entscheidet sich für **L**, die andere für **R**, und es bleibt die Medianwähler:in übrig, die den Ausschlag gibt, welche Partei eine Mehrheit erhalten wird. Innerhalb der beiden Parteien bilden die Angehörigen von **M** jeweils eine Minderheit, weil sie sich aufgeteilt haben. Bei Abstimmungen innerhalb der beiden Parteien würden sich daher **N** und **H** durchsetzen.
+Ganz anders sieht es in einem Land mit Mehrheitswahlsystem aus. Dort bildet sich über Zeit ein Zweiparteiensystem aus, bei dem nur die Parteien **L** und **R** im Parlament vertreten sind.[^bessere-demokratie-4] Für Angehörige der Gruppe **M** stellt sich nun die Frage, für welche der beiden Parteien sie stimmen. Nehmen wir an, die eine Hälfte entscheidet sich für **L**, die andere für **R**, und es bleibt die Medianwähler:in übrig, die den Ausschlag gibt, welche Partei eine Mehrheit erhalten wird. Innerhalb der beiden Parteien bilden die Angehörigen von **M** jeweils eine Minderheit, weil sie sich aufgeteilt haben. Bei Abstimmungen innerhalb der beiden Parteien würden sich daher **N** und **H** durchsetzen.
 
-Der entscheidende Unterschied zur Koalitionsbildung im Verhältniswahlsystem ist, dass **M** keine Partei wählen kann, die die eigenen Interessen vertritt und in einer Koalition ungewünschte Entscheidungen blockieren kann. Dies verändert das Kalkül von **M** bei der Wahl. Auch das lässt sich nachvollziehen, wenn wir den Entscheidungsbaum in @fig-decision_majoritarian anschauen. Falls sich die Medianwähler:in für die Partei **R** entscheidet, hat diese Partei eine Mehrheit im Parlament. Bei innerparteilichen Abstimmungen über die Besteuerungspräferenzen würden sich die Präferenzen von **H** in direkten Paarvergleichen durchsetzen, weil es in der Partei doppelt so viele Mitglieder von **H** als von **M** gibt.^[In anderen Worten: Das Medianmitglied steht in der Partei **L** deutlich links und in Partei **R** deutlich rechts von der Medianwähler:in.] Daraus folgt, dass **H** die präferierte Besteuerung durchsetzen kann, was in diesem Fall heißt, es kommt zu keinen Steuererhöhungen. Dies ist die zweitbeste Lösung für **M**. Sollte sich die Medianwähler:in jedoch für **L** entscheiden, setzen sich innerparteilich die Präferenzen von **N** durch, sodass die Steuern sowohl für **H** als auch für **M** erhöht werden -- und dies ist die am wenigsten erwünsche Präferenz von **M**. Da die Medianwähler:in dies weiß, wird sie sich für **R** entscheiden.
+[^bessere-demokratie-4]: In der Realität muss das nicht so sein, wie Großbritannien zeigt, aber dennoch haben bislang nur Labour und die Conservatives die Premierminister:in stellen können. In den USA haben nur Demokraten und Republikaner Chancen, in den Kongress einzuziehen -- hier besteht in reines Zweiparteiensystem.
+
+Der entscheidende Unterschied zur Koalitionsbildung im Verhältniswahlsystem ist, dass **M** keine Partei wählen kann, die die eigenen Interessen vertritt und in einer Koalition ungewünschte Entscheidungen blockieren kann. Dies verändert das Kalkül von **M** bei der Wahl. Auch das lässt sich nachvollziehen, wenn wir den Entscheidungsbaum in @fig-decision_majoritarian anschauen. Falls sich die Medianwähler:in für die Partei **R** entscheidet, hat diese Partei eine Mehrheit im Parlament. Bei innerparteilichen Abstimmungen über die Besteuerungspräferenzen würden sich die Präferenzen von **H** in direkten Paarvergleichen durchsetzen, weil es in der Partei doppelt so viele Mitglieder von **H** als von **M** gibt.[^bessere-demokratie-5] Daraus folgt, dass **H** die präferierte Besteuerung durchsetzen kann, was in diesem Fall heißt, es kommt zu keinen Steuererhöhungen. Dies ist die zweitbeste Lösung für **M**. Sollte sich die Medianwähler:in jedoch für **L** entscheiden, setzen sich innerparteilich die Präferenzen von **N** durch, sodass die Steuern sowohl für **H** als auch für **M** erhöht werden -- und dies ist die am wenigsten erwünsche Präferenz von **M**. Da die Medianwähler:in dies weiß, wird sie sich für **R** entscheiden.
+
+[^bessere-demokratie-5]: In anderen Worten: Das Medianmitglied steht in der Partei **L** deutlich links und in Partei **R** deutlich rechts von der Medianwähler:in.
 
 ```{r}
 #| label: fig-decision_majoritarian
@@ -391,4 +398,3 @@ table %>%
     )
 
 ```
-
