@@ -1,0 +1,42 @@
+# Einleitung {#sec-intro}
+
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+```
+
+Dies ist das Einleitungskapitel...
+
+## Ein Unterabschnitt
+
+```{r}
+#| label: fig-intro_1
+#| fig-cap: "A first figure"
+
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, 
+                y = body_mass_g, 
+                color = species)) +
+  geom_point()
+
+```
+
+::: border
+Text in einer Box.
+:::
+
+::: {.callout-important title="Wichtig!"}
+Die ist wichtig
+:::
+
+::: {.callout-warning title="Vorsicht!"}
+Hierauf müssen Sie achten.
+:::
+
+::: {.callout-tip title="Tipp"}
+Verwenden Sie zunächst Befehl xyz.
+:::

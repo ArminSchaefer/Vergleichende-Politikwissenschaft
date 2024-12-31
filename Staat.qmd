@@ -1,0 +1,30 @@
+# Staat, Staatsbildung und Konfikte {#sec-staat}
+
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+```
+
+Siehe @fig-intro_1 für mehr Details. Und @sec-intro für weitere Infos.
+
+```{r}
+#| label: fig-staat_1
+#| fig-cap: "Another figure"
+#| warning: false
+
+ggplot(data = penguins,
+  mapping = aes(x = flipper_length_mm, 
+                y = body_mass_g, 
+                color = species)) +
+  geom_point()+
+  labs(x = NULL, y = NULL)+
+  theme_light()+
+  theme_vp()
+
+```
+
+
+

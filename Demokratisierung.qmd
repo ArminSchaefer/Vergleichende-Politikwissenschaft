@@ -1,0 +1,656 @@
+# Demokratie als langer Prozess {#sec-demokratisierung}
+
+```{r}
+#| echo: false
+#| message: false
+
+source("_common.R")
+
+```
+
+In diesem Kapitel geht es um Demokratie. Demokratie ist uns wichtig, weil sie uns verspricht, dass wir uns an der Gestaltung unseres Gemeinwesens - sei es unserer Stadt oder Dorf, unserem Land, vielleicht Europa? - beteiligen können, dass wir also selbstbestimmer leben können als etwa in einer Diktatur. Es ist das alte Versprechen Jean-Jacque Rousseaus - nur unter den Gesetzen zu leben, die man sich selbst gegeben hat. Demokratie ist damit eine Form kollektiver Selbstregierung. Zugleich scheint diese Form politischer Herrschaft in Gefahr. Zumindest ist überall von einer 'Krise der Demokratie' zu lesen, von den Feinden der Demokratie und ihrem Aufstieg. 
+
+Um das besser zu verstehen und einordnen zu können, wollen wir in diesem und den nächsten beiden Kapiteln vestehen, was Demokratie ist, welche Länder seit wann demokratisch sind. Damit verbunden müssen wir uns mit grundlegenden Konzepten der Demokratie auseinandersetzen. Was ist eine Demokratie? Wenn es freie und faire Wahlen gibt? Wenn diese Wahlen auch wirklich dazuführen, dass Macht wechselt?  und wie man sie 'misst'. Wir beschäftigen uns auch mit der Frage, warum Länder demokratisch sind und es auch bleiben, während andere Länder nicht-demokratisch sind ('autokratisch', 'totalitär', diktatorisch) oder ihre Demokratie gefährdet erscheint.
+
+1) Was ist das Problem und warum ist das wichtig? (Realweltlicher Einstieg, um die Studis abzuholen)
+2) Was sind grundlegende Konzepte?
+3) Welche Modelle sind hilfreich und was wissen wir bereits über Unterschiede zwischen Ländern?
+4) Mit welchen Daten können wir arbeiten?
+5) Wie werden die Daten ausgewertet?
+6) Was zeigen die Daten?
+7) Wie weiter?
+
+
+
+Wir wollen in diesem Kapitel uns mit der longue durée der Demokratisierung beschäftigen. Das bedeutet eine ideengeschichtliche Rekonstruktion des Aufstiegs des demokratischen Gedankes (Theoretische Entwicklung). Danach geht es um den tatsächlichen Siegeszug dieser Herrschaftsform (Empirische Entwicklung). Um dieses zu leisten, müssen wir wuns fragen, wie man Demokratie misst. Hierzu diskutieren wir verschiedene Ansätze, und in diesem Zusammenhang Fragen der Reliabilität und Validität. 
+
+
+## Staaten und Demokratie
+
+In Kapitel ** haben wir uns mit dem Staat und dessen Existenz befasst.
+Dabei war es aber relativ egal, wie diese Staaten letztlich regiert werden. Der Staat hat einen Vorteil in der Ausübung von Gewalt *sowohl* in Demokratien *als auch* in Diktaturen. Wie hat sich die Demokratie *theoretisch* als auch *empirisch* entwickelt?
+
+## Theoretische Entwicklung
+
+Die Demokratie ist heutzutage quasi ausschließlich positiv konnotiert. Selbst die Autokratien wollen sich selbst gerne als Demokratien bezeichnen und als solche gesehen werden., bspw.die demokratische Volksrepublik Korea, früher die Deutsche Demokratische Republik (DDR) ... Diese *positive* Sicht auf die Demokratie ist aber ein vergleichsweise junges Phänomen.
+
+Denn seit der Antike war Demokratie als Herrschaftsform eigentlich verpönt. Sie galt als eine Verfallsform politischer Herrschaft. Dies lag weniger an einer Ablehnung der heutigen Form von Demokratie
+  * Vielmehr wandelte sich auch das Verständnis davon was Demokratie ist, wie sie gestaltet wird und daher auch wie sie praktisch funktioniert
+
+## Demokratie im antiken Griechenland
+
+* Plato und Aristoteles haben als Erste systematisch über politische Regimetypen nachgedacht
+* Nach Plato mündet Demokratie in "Pöbelherrschaft" (Ochlokratie)
+  * Er bevorzugt eine Staatsform, in der Expert:innen das Sagen haben
+* Aristoteles differenziert mehr
+* Unterscheidung von Regimetypen anhand der Anzahl an Herrschenden
+  * Eine:r
+  * Mehrere
+  * Alle
+
+## Demokratie im antiken Griechenland
+
+* Nach Aristoteles kann jede der drei Formen sich von einer guten in eine schlechte Form wandeln
+  * Gute Form = Fokus auf das Allgemeinwohl
+  * Schlechte Form = Fokus auf Eigeninteressen
+* Gute Form der Volksherrschaft: *politeia*
+  * Schlechte Form = Demokratie
+* "Gefahr": Demokratie als Herrschaft der Besitzlosen und Ungebildeten
+  * Dieser Gedanke reicht weit bis ins 19. JH hinein
+  * Bspw. bei Marx: Durch Demokratie wird der Klassenkampf entfacht
+
+## Demokratie im antiken Griechenland
+
+```{r}
+#| label: Demokratie
+#| echo: false
+#| warning: false
+#| message: false
+
+demokratie_tidy <- tribble(
+  ~`Zahl der Herrschenden`, ~`Gute Form`, ~Verfallsform, 
+  "einer", "Monarchie", "Tyrannis",
+  "mehrere", "Aristokratie", "Oligarchie",
+  "alle", "Politea", "Demokratie"
+  )
+  
+demokratie_tidy %>%
+  knitr::kable()
+
+```
+
+## Demokratie im antiken Griechenland
+
+* *Demokratie* im antiken Griechenland hat wenig mit der heutigen Demokratie zu tun
+  * Kein Fokus auf Wahlen
+  * Wahl von Regierung durch Losverfahren
+* Auch dieser Aspekt, Demokratie = Losverfahren, hielt sich sehr lange (bis ins 18 JH)
+* Bis ins 18 JH gab es daher maßgeblich nur Konflikte über die Beseitigung von "schlechten" Herrschern
+  * Nicht aber darüber, die Macht von den Herrschenden auf das Volk zu übertragen
+
+## Französische Revolution
+
+* Erst mit der Französischen Revolution entwickelte sich die Idee einer repräsentativen Demokratie
+* Wandel von Trichotomie...
+  * Monarchie/Aristokratie/Demokratie
+* ... zu Dichotomie
+  * Demokratie/Diktatur
+* Erst jetzt wird "Demokratie = Wahlen" und nicht "Demokratie = Losverfahren" etabliert
+
+# Definition(en) von Demokratie
+
+## Definition(en) von Demokratie
+
+* Der Kern jeder Demokratievorstellung ist die Volksherrschaft
+  * Im Gegensatz zu Herrschaftsformen, in denen nur ein Teil der Bevölkerung herrscht
+* Dahl (1971) liefert eine von vielen geteilte Minimaldefinition von Demokratie
+* Fokus liegt ausschließlich auf den *prozeduralen* Aspekten einer Demokratie
+  * Dies nennt man *Input-Legitimation*
+  * Kein Fokus darauf, welche Ergebnisse eine Demokratie liefert (das wäre *Output-Legitimation*)
+
+## Verständnis von Demokratie
+
+* Dahl identifiziert zwei Dimensionen zur Klassifikation von Demokratien
+  * Hinweis: Dahl nennt Demokratien *Polyarchie*, dieser Begriff hat sich aber nicht durchgesetzt
+* *Contestation*: Politischer Wettbewerb
+  * Wer kann gewählt werden?
+  * Freie und faire Wahlen
+  * Freie Medien
+* *Inclusion*: Wer darf wählen?
+  * Werden Gruppen systematisch ausgeschlossen?
+  * Wie schwierig ist es das Wahlrecht zu erhalten?
+
+## Verständnis von Demokratie
+
+![](dahl.JPG){width=10cm}
+
+# Entwicklung der Demokratie
+
+## Entwicklung der Demokratie
+
+* Der "Siegeszug" der Demokratie lässt sich aus verschiedenen Quellen empirisch nachzeichnen
+* Hier nutzen wir [Przeworskis Political Institutions and Political Events Data Set PIPE](https://xmarquez.github.io/democracyData/reference/PIPE.html), das allerdings nun Teil der [democracyData-package](https://xmarquez.github.io/democracyData/index.html) ist - wie auch SEHR viele andere Demokratie-Indizes dort zu finden sind.
+* Anwendung konzentriert sich auf:
+  * Ausweitung des Wahlrechts (kodiert als f für Franchise im PIPE-Datensatz)
+    * 7-stellige Kodierung: 0 = keine Wahlen, kein Parlament, 1 = Ständevertretung, 2 = Nur Eigentum, 3 = Eigentum, Steuern, Arbeit ODER Bildung UND Lesefähigkeit, 4 = Eigentum, Steuern, Arbeit ODER Bildung, 5 = Nur Lesefähigkeit, 6 = ökonom. 'Unabhängige' (kein Dienstpersonal, keine Schuldner), 7 = allg. Wahlrecht (für Männer)
+    * Wahlrecht für Frauen extra gemessen (2 = Frauen sind Männern gleichgestellt)
+* Wir können nun den jährlichen Durchschnitt der Wahlrechtseinschränkungen ermitteln seit 1789
+
+## Entwicklung der Demokratie
+
+```{r}
+#| label: Przeworksi
+#| eval: false
+
+democracy1 <- PIPE %>% 
+  group_by(year) %>% 
+  separate(f, into = c("male", "female"), sep = 1) %>%
+  mutate(male = as.numeric(male),
+  female = as.numeric(female)) %>%
+  summarise(
+  vote_ext = mean(male, na.rm = TRUE),
+  vote_extf = mean(female, na.rm=TRUE))
+
+ggplot(democracy1) +
+  geom_line(aes(x = year, y = vote_ext, color = "male suffrage")) +
+  geom_line(aes(x = year, y = vote_extf,  color = "female suffrage"), size = 1) +
+  coord_cartesian(xlim = c(1830, 2002)) +
+  theme(legend.position = "bottom")
+
+```
+
+## Entwicklung der Demokratie
+
+```{r}
+#| label: Przeworski-I
+#| echo: false
+
+democracy1 <- PIPE %>% 
+  group_by(year) %>% 
+  separate(f, into = c("male", "female"), sep = 1) %>%
+  mutate(male = as.numeric(male),
+  female = as.numeric(female)) %>%
+  summarise(
+  vote_ext = mean(male, na.rm = TRUE),
+  vote_extf = mean(female, na.rm=TRUE))
+
+ggplot(democracy1) +
+  geom_line(aes(x = year, y = vote_ext, color = "male suffrage")) +
+  geom_line(aes(x = year, y = vote_extf,  color = "female suffrage"), size = 1) +
+  coord_cartesian(xlim = c(1830, 2002)) +
+  theme(legend.position = "bottom")
+
+```
+
+## Entwicklung der Demokratie
+
+* Ab wann waren Wahlen überwiegend geheim?
+* Variable im PIPE-Datensatz `secret`
+* Zwei Ausprägungen
+  * 0 = offen, öffentlich
+  * 1 = geheim ('schwache' Kodierung inkl. "Geheim als Option" und "für Manche geheim")
+* Operationalisierung: Anzahl der geheimen Wahlen an allen Wahlen.
+
+## Entwicklung der Demokratie
+
+```{r Przeworski II, collapse=TRUE, warning=FALSE, message=FALSE, size = "tiny", eval = F}
+
+
+democracy2 <- PIPE %>% 
+  group_by(year) %>% 
+  summarise(share_secret = mean(secret, na.rm=TRUE))
+  
+ggplot(democracy2) +
+  geom_line(aes(x = year, y = share_secret)) +
+  coord_cartesian(xlim = c(1830, 2002))
+
+```
+
+## Entwicklung der Demokratie
+
+```{r Przeworski IIa, collapse=TRUE, warning=FALSE, message=FALSE, size = "tiny", echo = F}
+democracy2 <- PIPE %>% 
+  group_by(year) %>% 
+  summarise(share_secret = mean(secret, na.rm=TRUE))
+  
+ggplot(democracy2) +
+  geom_line(aes(x = year, y = share_secret)) +
+  coord_cartesian(xlim = c(1830, 2002))
+```
+
+## Entwicklung der Demokratie
+
+Dass Wahlen wirklich geheim sind, ist für die Demokratie von ganz zentraler Bedeutung:
+
+>“We know the results of 2,386 elections in which incumbents presented themselves, where the "incumbent" can be a person, a party, or a hand-picked successor. Incumbents won 92 percent of the 449 elections in which voting was public and 76 percent of the 1,937 in which it was secret”
+>
+>(Przeworski 2010)
+
+## Entwicklung der Demokratie
+
+Wie häufig führen dann Wahlen zu einem Machtwechsel?
+
+```{r Przeworski III, collapse=TRUE, warning=FALSE, message=FALSE, size = "tiny", eval = F}
+library(tidyverse)
+
+democracy3 <- PIPE %>%
+  group_by(year) %>% 
+  summarise(alternation = mean(salterel, na.rm = TRUE))
+
+ggplot(democracy3) +
+  geom_smooth(aes(x = year, y = alternation), colour ="Black") +
+  coord_cartesian(xlim = c(1850, 2002))
+```
+
+## Entwicklung der Demokratie
+
+Wie häufig führen dann Wahlen zu einem Machtwechsel?
+
+```{r Przeworski IIIa, collapse=TRUE, warning=FALSE, message=FALSE, size = "tiny", echo = F}
+library(tidyverse)
+
+democracy3 <- PIPE %>%
+  group_by(year) %>% 
+  summarise(alternation = mean(salterel, na.rm = TRUE))
+
+ggplot(democracy3) +
+  geom_smooth(aes(x = year, y = alternation), colour ="Black") +
+  coord_cartesian(xlim = c(1850, 2002))
+```
+
+
+# Messung von Demokratie
+
+## Messung von Konzepten
+
+* Wenngleich ein diffuses Verständnis darüber besteht was Demokratie ist, besteht doch Uneinigkeit darüber, was genau eine Demokratie ausmacht
+* Demokratie ist ein *theoretisches Konzept*
+  * Theoretische Konzepte können nicht direkt beobachtet werden
+  * Sie müssen in empirisch messbare Kategorien umgewandelt werden
+* Der Prozess vom theoretischen Konzept zur konkreten Messung anhand von Indikatoren nennt sich *Operationalisierung*
+* Jeder Test von Konzepten ist daher nur so gut wie die gemessenen Konzepte!
+
+## Wie kann man Demokratie messen?
+
+Wir behandeln 4 Konzepte:
+
+* *Democracy/ Dictatorship (DD)* (früher **PACL** ([**P**rzeworski, **A**lvarez, **C**heibub, **L**imongi])
+* [Polity V](http://www.systemicpeace.org/inscrdata.html)
+* [Freedomhouse](https://freedomhouse.org/), vgl. VL1
+* Varieties of Democracy [V-Dem](https://www.v-dem.net/en/)
+
+Fragen Sie sich parallel: Was sind die Stärken und Schwächen dieser Operationalisierungen? 
+
+## Democracy/Dictatorship (DD)
+
+* DD legt Fokus primär darauf auf (freie) Wahlen
+* Demokratie ist ein Regime "in which those who govern are selected through contested elections"
+
+\pause\vspace{3mm}
+
+>‘Democracy is simply a system in which incumbents lose elections and leave when they lose’
+>
+> (Przeworski 2019: 5).
+
+## Democracy/Dictatorship (DD)
+
+"Contested elections" umfasst die folgenden Aspekte: \pause
+
+* Ex ante-Unsicherheit
+  * Das Ergebnis der Wahl ist offen, bis die Wahl stattgefunden hat
+* Ex post-Irreversibilität
+  * Der Gewinner der Wahl erringt die Macht
+* Wiederholbarkeit
+  * Wahlen werden in regelmäßigen und festgelegten Intervallen abgehalten
+
+## Democracy/Dictatorship (DD)
+
+Die Konkrete Operationalisierung erfolgt anhand der Kriterien \pause
+
+* Die Legislative wird gewählt
+* Die Exekutive wird gewählt (ggf. durch eine gewählte Legislative)
+* Mehr als eine Partei nimmt an diesen Wahlen teil
+* Es hat sich mindestens ein Machtwechsel unter den identischen Regeln vollzogen
+
+\pause
+
+Wenn etwas davon nicht zutrifft: das Land ist im Beobachtungsjahr eine Diktatur.
+
+## Democracy/Dictatorship (DD)
+
+* Das Vorliegen der ersten drei Punkte ist eine notwendige, aber keine hinreichende Bedingung für Demokratie. 
+* Es muss sich auch nach einer Wahl ein Machtwechsel vollzogen haben als hinreichende Bedingung für den Schluss auf das Vorliegen von Demokratie
+* Wenn eine Regierung immer wiedergewählt wird, lässt sich *nicht feststellen*, ob sie bei Abwahl auch zurücktritt würde
+* Wir können also nur nach der Abwahl einer Regierung feststellen, ob diese auch regelkonform die politische Macht übergibt, ob also die Definition 'Wenn Abwahl (mit Rücktritt)' dann 'Demokratie' empirisch zutrifft.
+
+## Democracy/Dictatorship (DD)
+
+Beispiel: Botswana \pause
+
+* Seit 1966 unabhängig
+* Regelmäßige, freie und faire Wahlen
+* Aber: Seit 1966 stets Alleinregierung der Botswana Democratic Party (BDP)
+* Demokratie oder Diktatur?
+  * Argumentation des DD: Man weiß es nicht!
+  * Würde BDP ein Wahlverlust akzeptieren?
+  * Vielleicht werden Wahlen nur abgehalten, da BDP sicher ist zu gewinnen?
+* DD kodiert Botswana als Diktatur
+
+## Polity 5
+
+* Daten für 167 Länder von 1800 bis 2018
+* wir rufen das erneut über das 'democracyData'-package ab
+* ansonsten: ([Polity 5](http://www.systemicpeace.org/inscrdata.html))
+* Jährlicher Score für Indikatoren von Demokratie (0-10) und von Autokratie (0-10)
+* Demokratie-Score abzüglich Autokratie-Score ergibt den Polity Score (–10 bis +10).
+  * Länder mit Indexwerten zwischen 6 und 10 = demokratisch 
+  * Länder mit Werten von -6 bis -10 = autokratisch
+  * Zwischenkategorie: "Anokratie"
+* Die Daten findet man hier [Polity 5](http://www.systemicpeace.org/inscrdata.html)
+
+## Polity 5
+
+Der Demokratie-Index hat fünf Dimensionen \pause
+
+* "Competitiveness of executive recruitment" 
+* "Openness of executive recruitment"
+* "Executive constraints/decision rules" 
+* "Regulation of political participation"
+* "Competitiveness of participation" 
+
+## Polity 5
+
+```{r polity v, eval = F, size="tiny", warning=FALSE, message=FALSE}
+library(tidyverse)
+library(democracyData)
+
+# erneut innerhalb von democracyData aufrufen
+
+# polityIV
+
+# Zahlder Demokratien, Anokratien, und Autokratien pro Jahr 
+polity_ts <- polityIV %>%
+  filter(polity2 >= -10) %>% 
+  mutate(regime_type = case_when(
+    polity2 >= 6 ~ "Democracy",
+    polity2 <= 5 & polity2 >= -6 ~ "Anocracy",
+    polity2 <= -6 ~ "Autocracy")) %>% 
+  group_by(year, regime_type) %>%
+  summarise(regime_n = n())
+
+ggplot(polity_ts, 
+       aes(x = year, 
+           y = regime_n, 
+           color = regime_type)) +
+  geom_line()+
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_color_manual("", values = c("steelblue", "darkred", "darkgreen"))
+```
+
+## Polity 5
+
+```{r polity vb, echo = F, size="tiny", warning=FALSE, message=FALSE}
+library(tidyverse)
+library(democracyData)
+
+# polityIV
+
+# Zahlder Demokratien, Anokratien, und Autokratien pro Jahr 
+polity_ts <- polityIV %>%
+  filter(polity2 >= -10) %>% 
+  mutate(regime_type = case_when(
+    polity2 >= 6 ~ "Democracy",
+    polity2 <= 5 & polity2 >= -6 ~ "Anocracy",
+    polity2 <= -6 ~ "Autocracy")) %>% 
+  group_by(year, regime_type) %>%
+  summarise(regime_n = n())
+
+ggplot(polity_ts, 
+       aes(x = year, 
+           y = regime_n, 
+           color = regime_type)) +
+  geom_line()+
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_color_manual("", values = c("steelblue", "darkred", "darkgreen"))
+```
+
+## Freedom House
+
+* Alle Länder von 1972 bis 2022 ([Freedom house](https://freedomhouse.org/))
+* Keine direkte Messung von Demokratie, sondern von "Freiheit(en)"
+  * Politische Rechte (allgemeines Wahlrecht, offene Wahlen etc.)
+  * Zivile Rechte ("Bürgerrechte", Meinungs- und Redefreiheit etc.)
+  * Aber auch andere Aspekte, etwa ökonomische Gleichheit
+* Auf der Basis von Ausprägungen der Indikatoren in den verschiedenen Dimensionen klassifiziert Freedomhouse Länder als *frei*, *teilweise frei* und *unfrei*
+* wir hatten den Datensatz schon in VL1 kennengelernt, nun können wir die Daten ebenfalls über das 'democracyData'-package aufrufen, das aber läuft über eine download Funktion
+
+## Freedom House
+
+Z.B: Indikatoren zu den *politischen Freiheitsrechten*:\pause 
+
+* Wird die Exekutive in freien und fairen Wahlen bestimmt? 
+* Was ist das Ausmaß der Korruption?
+* Wie responsiv ist die Regierung zwischen den Wahlen? 
+* Ist die Regierungstätigkeit transparent?
+* Gibt es ein freies Versammlungsrecht?
+* Gibt es eine Opposition mit Aussicht auf Machtübernahme?
+* Haben Minderheiten ausreichenden Schutz?
+
+## Freedom House
+
+* Als durchschnittlicher Wert aus dem Index politischer und ziviler Freiheiten entsteht ein * Index von 1 (frei; bis 2,5) bis 7 (unfrei; ab 5,5).
+* Ist der Freedom-House-Inde
+x als Messkonzept von Demokratie substanziell oder prozedural?
+
+## Freedom House
+
+```{r freedomhouse 2, eval = F, size= "tiny", collapse=TRUE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(democracyData)
+
+# innerhalb des DemocracyData package eine download-Funktion
+
+fh <- download_fh(verbose = FALSE)
+View(fh)
+
+fh_share <- fh %>% 
+  group_by(year, status) %>%
+  summarise(regime_n = n())
+  
+ggplot(fh_share) + 
+  aes(x = year, 
+           y = regime_n, 
+           color = status) +
+  geom_line()+
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_color_manual("", values = c("steelblue", "darkred", "darkgreen")) +
+  ylab("Share")
+  
+
+```
+
+## Freedom House
+
+```{r freedomhouse 2b, echo = F, size= "tiny", collapse=TRUE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(democracyData)
+
+fh <- download_fh(verbose = FALSE)
+View(fh)
+
+fh_share <- fh %>% 
+  group_by(year, status) %>%
+  summarise(regime_n = n())
+  
+ggplot(fh_share) + 
+  aes(x = year, 
+           y = regime_n, 
+           color = status) +
+  geom_line()+
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  scale_color_manual("", values = c("steelblue", "darkred", "darkgreen")) +
+  ylab("Share")
+```
+
+## V-Dem
+
+* [V-Dem](https://www.v-dem.net/en/) legt ein abgestuftes Konzept von Demokratie und Autokratie zugrunde
+* Unterscheiden vier Regime-Typen: 
+  * closed autocracy
+  * electoral autocracy
+  * electoral democracy
+  * liberal democracy
+
+## V-Dem
+
+![](V-Dem 2020.png){width=10cm}
+
+## V-Dem
+
+Das erinnert stark an ein ganz ähnliches Konzept von Mudde und Kaltwasser:
+
+![](Mudde Kaltwasser Democracy and Populism.png){width=10cm}
+
+## V-Dem
+
+Definition von Liberaler Demokratie bei V-DEM
+
+"The liberal principle of democracy emphasizes the importance of protecting individual and minority rights against the tyranny of the state and the tyranny of the majority. The liberal model takes a *negative* view of political power insofar as it judges the quality of democracy by the limits placed on government. This is achieved by constitutionally protected civil liberties, strong rule of law, an independent judiciary, and effective checks and balances that, together, limit the exercise of executive power. To make this a measure of liberal democracy, the index also takes the level of electoral democracy into account."
+
+## V-Dem
+
+```{r vdem3, size="tiny", warning=FALSE, message=FALSE, eval = F}
+library(tmap) # Karten erstellen
+library(sf) # Karten erstellen
+library(rnaturalearth) # Kartendaten
+library(rnaturalearthdata)
+
+
+V_dem_core <- readRDS("V-Dem-CY-Core-v10.rds")
+
+v_dem_last <- V_dem_core %>% 
+  filter(year == 2019) %>% 
+  select(v2x_libdem, country_name:year, v2x_polyarchy)
+
+world_map <- ne_countries(scale = "medium", returnclass = "sf")
+
+sf_use_s2(FALSE)
+
+vl4_vdemmap <- world_map %>% 
+  rename(country_name = admin) %>% 
+  left_join(v_dem_last, by = "country_name") %>% 
+  select(country_name, v2x_libdem, geometry) %>% 
+  st_as_sf()
+
+tm_shape(vl4_vdemmap) + 
+  tm_polygons("v2x_libdem", title = "Liberal Democracy Index") + 
+  tm_layout(main.title = "V-Dem Liberal Democracy Index 2019")
+```
+
+## V-Dem
+
+```{r vdem3b, size="tiny", warning=FALSE, message=FALSE, echo = F}
+library(tmap) # Karten erstellen
+library(sf) # Karten erstellen
+library(rnaturalearth) # Kartendaten
+
+
+V_dem_core <- readRDS("V-Dem-CY-Core-v10.rds")
+
+v_dem_last <- V_dem_core %>% 
+  filter(year == 2019) %>% 
+  select(v2x_libdem, country_name:year, v2x_polyarchy)
+
+world_map <- ne_countries(scale = "medium", returnclass = "sf")
+
+sf_use_s2(FALSE)
+
+vl4_vdemmap <- world_map %>% 
+  rename(country_name = admin) %>% 
+  left_join(v_dem_last, by = "country_name") %>% 
+  select(country_name, v2x_libdem, geometry) %>% 
+  st_as_sf()
+
+tm_shape(vl4_vdemmap) + 
+  tm_polygons("v2x_libdem", title = "Liberal Democracy Index") + 
+  tm_layout(main.title = "V-Dem Liberal Democracy Index 2019")
+```
+
+# Vergleich
+
+## Vergleich
+
+* Zwei Dimensionen um Messung zu vergleichen:
+  * Input- und/oder Output-Definition?
+  * Dichotom/Kontinuierlich?
+* DD und Polity sind Minimaldefinitionen
+* Minimaldefinitionen haben Vorteile:
+  * Vermeiden eher Tautologien ("Demokratien sind immer friedlich...")
+    * Tautologisch, wenn "Frieden" ein Teil der Messung ist
+  * Klarere Analyse ("Demokratien führen zu XY...")
+    * Unklar, welcher der zig Aspekte einer Demokratie den Effekt ausübt
+
+## Dichotom vs. Kontinuierlich
+
+![](dich_cont.JPG){width=10cm}
+
+# Validität
+
+## Validität
+
+* Zentraler Aspekt jeder Messung ist die Validität
+* Validität liegt dann vor, wenn wir das messen, was wir messen wollen
+* Umfasst zahlreiche Aspekte, u.a.
+  * Attribute
+  * Aggregation
+
+## Attribute
+
+* Enthält das Maß alle notwendigen Attibute?
+* Enthält es eventuell zu viele?
+* Dafür gibt es keine klare Regeln. Vom jeweiligen Inhalt abhängig
+* Aber:
+  * Zu viele Indikatoren können zu geringer Validität führen, da Wahrscheinlichkeit als Demokratie zu gelten sinkt
+    * Insbesondere bei eher Output orientierten Konzeptionen
+  * Zu wenige Attribute können aber zu "falsch Positiven" führen
+    * insbesonder bei Minimaldefinitionen
+
+## Aggregation
+
+* Aggregation befasst sich mit der Frage, wie einzelne Attribute zu einem Gesamtscore zusammengeführt werden
+* Im einfachsten Fall werden alle Attribute gleichgewichtet und ein Mittelwert/Summe gebildet
+  * Das ist aber nicht immer sinnvoll
+* Ist wirklich jedes Attribut gleichwichtig?
+  * Wenn nicht: Wie sollte stattdessen gewichtet werden?
+* Kompensation bei Multi-Dimensionalen Messungen:
+  * Können hohe Werte auf der einen Dimension für niedrige Werte auf der anderen kompensieren?
+
+# Reliabilität
+
+## Reliabilität
+
+* Reliabilität bedeutet, dass unser Maß die gleichen Werte produziert, wenn wir den gleichen Prozess nochmal auf den Fall anwenden
+  * Bspw.: Mehrere Kodierer kommen zu dem gleichen Demokratiewert bei einem Land
+* Hohe Relaibilität heißt nicht hohe Validität
+  * Man kann auch invalide Konzepte sehr reliabel messen (systematische Messfehler)
+* Umgekehrt gilt auch: Valide Messungen sind nicht immer reliabel
+
+## Reliabilität
+
+![](rel_val.JPG){width=10cm}
+
+## Reliabilität
+
+* Reliabilität wird stark dadurch beeinflusst wie manifest die Variablen sind
+* Subjektive Einschätzungen weniger reliabel
+* DD vermutlich deutlich reliabler als Freedomhouse
+  * DD objektiv feststellbar
+  * Freedomhouse: *faire* Wahlen, *freie* Medien, etc.
+* Reliabilität lässt sich aber empirisch prüfen, bspw. über die sog. Inter-Koder-Reliabilität
+
+
+

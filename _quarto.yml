@@ -1,0 +1,50 @@
+format:
+  html:
+    theme:
+      - cosmo
+      - vp.scss
+    code-link: true
+    code-fold: true
+    embed-resources: true
+
+  pdf:
+    documentclass: scrreprt
+
+lang: de
+
+project:
+  type: book
+  
+book:
+  title: "Einführung in die Vergleichende Politikwissenschaft"
+  reader-mode: true
+  page-footer:
+    left: |
+      Lehrbuch für die Universität Siegen und die JGU Mainz.
+    right: |
+      Geschrieben mit <a href="https://quarto.org/">Quarto</a>.
+  cover-image: cover.png
+  favicon: cover.png
+  author: "Philip Manow und Armin Schäfer"
+  date: today
+  date-format: DD.MM.YYYY
+
+  chapters:
+    - index.qmd
+    - Einleitung.qmd
+    - Politik und Vergleichende Politik
+    - Staat.qmd
+    - Demokratiemessung.qmd
+    - Demokratie-oder-Diktatur.qmd
+    - Bessere-Demokratie.qmd
+    - Probleme.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: "politische-vierteljahresschrift.csl"
+standalone: true
+embed-resources: true
+
+execute:
+  freeze: auto
